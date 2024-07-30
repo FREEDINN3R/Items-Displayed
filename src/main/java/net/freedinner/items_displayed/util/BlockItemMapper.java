@@ -15,16 +15,16 @@ import java.util.Map;
 public class BlockItemMapper {
     private static BiMap<Block, Item> blockItemMap = HashBiMap.create();
 
+    public static BiMap<Block, Item> getBlockItemMap() {
+        return blockItemMap;
+    }
+
+    public static void setBlockItemMap(BiMap<Block, Item> blockItemMap) {
+        BlockItemMapper.blockItemMap = blockItemMap;
+    }
+
     public static void addEntry(Block block, Item item) {
         blockItemMap.put(block, item);
-    }
-
-    public static void writeDataToPacket(PacketByteBuf packet) {
-        MapWriter.writeMapToPacket(blockItemMap, packet);
-    }
-
-    public static void loadDataFromPacket(PacketByteBuf packet) {
-        blockItemMap = MapWriter.readMapFromPacket(packet);
     }
 
     public static Item getItemOrNull(Block block) {
@@ -56,36 +56,5 @@ public class BlockItemMapper {
     public static boolean isItemBlacklisted(Item item) {
         String itemId = Registries.ITEM.getId(item).toString();
         return ModConfigs.BLACKLISTED_ITEMS.contains(itemId);
-    }
-
-    private static class MapWriter {
-        public static void writeMapToPacket(BiMap<Block, Item> map, PacketByteBuf packet) {
-            packet.writeInt(map.size());
-
-            map.forEach((key, value) -> {
-                Identifier blockId = Registries.BLOCK.getId(key);
-                packet.writeIdentifier(blockId);
-
-                Identifier itemId = Registries.ITEM.getId(value);
-                packet.writeIdentifier(itemId);
-            });
-        }
-
-        public static BiMap<Block, Item> readMapFromPacket(PacketByteBuf packet) {
-            BiMap<Block, Item> map = HashBiMap.create();
-            int size = packet.readInt();
-
-            for (int i = 0; i < size; i++) {
-                Identifier blockId = packet.readIdentifier();
-                Block block = Registries.BLOCK.get(blockId);
-
-                Identifier itemId = packet.readIdentifier();
-                Item item = Registries.ITEM.get(itemId);
-
-                map.put(block, item);
-            }
-
-            return map;
-        }
     }
 }

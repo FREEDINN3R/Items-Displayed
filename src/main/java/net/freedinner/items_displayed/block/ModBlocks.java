@@ -1,6 +1,5 @@
 package net.freedinner.items_displayed.block;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.freedinner.items_displayed.ItemsDisplayed;
 import net.freedinner.items_displayed.block.custom.stackable.DiamondItemBlock;
 import net.freedinner.items_displayed.block.custom.stackable.EmeraldItemBlock;
@@ -9,6 +8,7 @@ import net.freedinner.items_displayed.item.custom.DebugBlockItem;
 import net.freedinner.items_displayed.util.ModTemplates;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
+import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -115,7 +115,7 @@ public class ModBlocks {
     }
 
     private static void registerDebugItem(String name, Block block) {
-        DebugBlockItem debugBlockItem = new DebugBlockItem(block, new FabricItemSettings());
+        DebugBlockItem debugBlockItem = new DebugBlockItem(block, new Item.Settings());
         Registry.register(Registries.ITEM, new Identifier(ItemsDisplayed.MOD_ID, name), debugBlockItem);
     }
 

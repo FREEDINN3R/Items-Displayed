@@ -9,8 +9,7 @@ import net.freedinner.items_displayed.entity.ModEntities;
 import net.freedinner.items_displayed.entity.custom.ItemDisplayEntityModel;
 import net.freedinner.items_displayed.entity.custom.ItemDisplayEntityRenderer;
 import net.freedinner.items_displayed.event.RenderTooltipEvent;
-import net.freedinner.items_displayed.networking.NetworkingConstants;
-import net.freedinner.items_displayed.util.BlockItemMapper;
+import net.freedinner.items_displayed.networking.S2CLoadMapsPacket;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
@@ -25,9 +24,7 @@ public class ItemsDisplayedClient implements ClientModInitializer {
 		EntityRendererRegistry.register(ModEntities.ITEM_DISPLAY, ItemDisplayEntityRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(ITEM_DISPLAY_MODEL_LAYER, ItemDisplayEntityModel::getTexturedModelData);
 
-		ClientPlayNetworking.registerGlobalReceiver(NetworkingConstants.CLIENT_LOAD_MAPS_ID, (client, handler, buf, responseSender) -> {
-			BlockItemMapper.loadDataFromPacket(buf);
-		});
+		ClientPlayNetworking.registerGlobalReceiver(S2CLoadMapsPacket.ID, S2CLoadMapsPacket::receive);
 
 		ItemTooltipCallback.EVENT.register(new RenderTooltipEvent());
 	}

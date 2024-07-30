@@ -44,13 +44,12 @@ public class ItemDisplayEntity extends LivingEntity {
 
     public ItemDisplayEntity(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
-        setStepHeight(0.0f);
     }
 
     @Override
-    protected void initDataTracker() {
-        super.initDataTracker();
-        dataTracker.startTracking(DISPLAY_ROTATION_TRACKER, DEFAULT_DISPLAY_ROTATION);
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(DISPLAY_ROTATION_TRACKER, DEFAULT_DISPLAY_ROTATION);
     }
 
     @Override
@@ -132,9 +131,7 @@ public class ItemDisplayEntity extends LivingEntity {
         super.writeCustomDataToNbt(nbt);
 
         if (!displayedItem.isEmpty()) {
-            NbtCompound heldItemNbt = new NbtCompound();
-            displayedItem.writeNbt(heldItemNbt);
-            nbt.put(DISPLAYED_ITEM_NBT_KEY, heldItemNbt);
+            nbt.put(DISPLAYED_ITEM_NBT_KEY, displayedItem.encodeAllowEmpty(this.getRegistryManager()));
         }
 
         if (displayRotation != DEFAULT_DISPLAY_ROTATION) {
@@ -148,7 +145,7 @@ public class ItemDisplayEntity extends LivingEntity {
 
         if (nbt.contains(DISPLAYED_ITEM_NBT_KEY)) {
             NbtCompound heldItemNbt = nbt.getCompound(DISPLAYED_ITEM_NBT_KEY);
-            displayedItem = ItemStack.fromNbt(heldItemNbt);
+            displayedItem = ItemStack.fromNbtOrEmpty(this.getRegistryManager(), heldItemNbt);
         }
 
         if (nbt.contains(DISPLAY_ROTATION_NBT_KEY)) {
@@ -195,6 +192,11 @@ public class ItemDisplayEntity extends LivingEntity {
 
         super.calculateDimensions();
         setPosition(x, y, z);
+    }
+
+    @Override
+    public float getStepHeight() {
+        return 0.0f;
     }
 
     @Override

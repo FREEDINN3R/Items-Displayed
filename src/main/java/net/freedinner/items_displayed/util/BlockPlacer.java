@@ -24,7 +24,7 @@ public class BlockPlacer {
         if (result.isAccepted()) {
             player.swingHand(hand, true);
 
-            SoundEvent sound = block.getSoundGroup(block.getDefaultState()).getPlaceSound();
+            SoundEvent sound = block.getDefaultState().getSoundGroup().getBreakSound();
             float pitch = player.getWorld().getRandom().nextFloat() * 0.1f + 0.9f;
             player.getWorld().playSound(null, placementContext.getBlockPos(), sound, SoundCategory.BLOCKS, 1.0f, pitch);
         }

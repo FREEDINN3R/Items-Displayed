@@ -22,7 +22,7 @@ public class ItemDisplayEntityRenderer extends LivingEntityRenderer<ItemDisplayE
     }
 
     @Override
-    protected void setupTransforms(ItemDisplayEntity entity, MatrixStack matrices, float animationProgress, float bodyYaw, float tickDelta) {
+    protected void setupTransforms(ItemDisplayEntity entity, MatrixStack matrices, float animationProgress, float bodyYaw, float tickDelta, float scale) {
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f - entity.getDisplayRotation()));
 
         float i = (float)(entity.getWorld().getTime() - entity.lastHitTime) + tickDelta;
