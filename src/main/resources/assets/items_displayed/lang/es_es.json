@@ -4,6 +4,9 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Mostrar Objeto",
 
+  "tag.item.items_displayed.sherds" : "Fragmentos",
+  "tag.item.items_displayed.smithing_templates" : "Plantillas de forja",
+
   "item.items_displayed.tooltip.shift_place": "Puede ser colocado al sostener Shift",
 
   "item.items_displayed.tooltip.shift_more_info": "Presiona Shift para más información",

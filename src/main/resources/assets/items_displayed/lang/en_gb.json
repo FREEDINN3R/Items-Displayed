@@ -4,6 +4,9 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Item Display",
 
+  "tag.item.items_displayed.sherds" : "Sherds",
+  "tag.item.items_displayed.smithing_templates" : "Smithing templates",
+
   "item.items_displayed.tooltip.shift_place": "Can be placed while sneaking",
   
   "item.items_displayed.tooltip.shift_more_info": "Press Shift for more info",

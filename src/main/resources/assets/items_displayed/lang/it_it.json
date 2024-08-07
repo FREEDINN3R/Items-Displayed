@@ -4,6 +4,9 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Visualizzazione dell'Oggetto",
 
+  "tag.item.items_displayed.sherds" : "Frammenti",
+  "tag.item.items_displayed.smithing_templates" : "Modelli da forgia",
+
   "item.items_displayed.tooltip.shift_place": "Posizionabile tenendo premuto Maiusc",
 
   "item.items_displayed.tooltip.shift_more_info": "Premi Maiusc per ulteriori informazioni",

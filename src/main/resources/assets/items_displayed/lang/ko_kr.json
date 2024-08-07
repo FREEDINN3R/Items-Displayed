@@ -4,6 +4,9 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "아이템 표시",
 
+  "tag.item.items_displayed.sherds" : "조각",
+  "tag.item.items_displayed.smithing_templates" : "대장장이 템플릿",
+
   "item.items_displayed.tooltip.shift_place": "Shift를 누른 상태에서 배치 가능",
 
   "item.items_displayed.tooltip.shift_more_info": "추가 정보를 보려면 Shift를 누르세요",

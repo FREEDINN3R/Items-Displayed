@@ -4,6 +4,9 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Gegenstandsdarsteller",
 
+  "tag.item.items_displayed.sherds" : "Töpferscherben",
+  "tag.item.items_displayed.smithing_templates" : "Schmiedevorlagen",
+
   "item.items_displayed.tooltip.shift_place": "Kann platziert werden, während Shift gedrückt wird",
 
   "item.items_displayed.tooltip.shift_more_info": "Shift für weitere Informationen drücken",

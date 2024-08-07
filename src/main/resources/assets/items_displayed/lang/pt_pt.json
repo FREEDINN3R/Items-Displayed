@@ -4,6 +4,9 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Exibição de Item",
 
+  "tag.item.items_displayed.sherds" : "Fragmentos",
+  "tag.item.items_displayed.smithing_templates" : "Modelos de forjamento",
+
   "item.items_displayed.tooltip.shift_place": "Pode ser colocado ao segurar Shift",
 
   "item.items_displayed.tooltip.shift_more_info": "Pressione Shift para mais informações",

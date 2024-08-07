@@ -4,6 +4,9 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Affichage d'Objet",
 
+  "tag.item.items_displayed.sherds" : "Éclats",
+  "tag.item.items_displayed.smithing_templates" : "Modèles de forge",
+
   "item.items_displayed.tooltip.shift_place": "Peut être placé en maintenant Maj enfoncée",
 
   "item.items_displayed.tooltip.shift_more_info": "Appuyez sur Maj pour plus d'informations",

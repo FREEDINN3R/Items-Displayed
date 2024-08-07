@@ -4,6 +4,9 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Подставка для предметов",
 
+  "tag.item.items_displayed.sherds" : "Глиняные черепки",
+  "tag.item.items_displayed.smithing_templates" : "Кузнечные шаблоны",
+
   "item.items_displayed.tooltip.shift_place": "Можно поставить на Shift",
 
   "item.items_displayed.tooltip.shift_more_info": "Зажми Shift для справки",
