@@ -1,7 +1,8 @@
 package net.freedinner.items_displayed.util;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.freedinner.items_displayed.block.custom.*;
+import net.freedinner.items_displayed.block.custom.ArmorTrimBlock;
+import net.freedinner.items_displayed.block.custom.NetheriteUpgradeBlock;
+import net.freedinner.items_displayed.block.custom.SherdBlock;
 import net.freedinner.items_displayed.block.custom.stackable.IngotBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -40,9 +41,9 @@ public class ModTemplates {
                 .sounds(BlockSoundGroup.METAL);
     }
 
-    private static FabricBlockSettings defaultSettings() {
-        return FabricBlockSettings
-                .of()
+    private static AbstractBlock.Settings defaultSettings() {
+        return AbstractBlock.Settings
+                .create()
                 .breakInstantly()
                 .noBlockBreakParticles()
                 .nonOpaque()

@@ -4,7 +4,7 @@ import net.freedinner.items_displayed.config.ModConfigs;
 import net.freedinner.items_displayed.entity.ModEntities;
 import net.freedinner.items_displayed.entity.custom.ItemDisplayEntity;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.item.TooltipType;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;

@@ -17,7 +17,7 @@ public class ModItemGroups {
     static {
         ITEMS_DISPLAYED = Registry.register(
                 Registries.ITEM_GROUP,
-                new Identifier(ItemsDisplayed.MOD_ID, "item_group"),
+                Identifier.of(ItemsDisplayed.MOD_ID, "item_group"),
                 FabricItemGroup.builder()
                         .displayName(Text.translatable("item.items_displayed.item_group_name"))
                         .icon(() -> new ItemStack(ModItems.ITEM_DISPLAY))

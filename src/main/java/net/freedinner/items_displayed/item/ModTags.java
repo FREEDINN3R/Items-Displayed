@@ -11,7 +11,7 @@ public class ModTags {
     public static final TagKey<Item> SMITHING_TEMPLATES = register("smithing_templates");
 
     private static TagKey<Item> register(String name) {
-        return TagKey.of(RegistryKeys.ITEM, new Identifier(ItemsDisplayed.MOD_ID, name));
+        return TagKey.of(RegistryKeys.ITEM, Identifier.of(ItemsDisplayed.MOD_ID, name));
     }
 
     public static void registerTags() {

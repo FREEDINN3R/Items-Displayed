@@ -108,7 +108,7 @@ public class ModBlocks {
             new LapisLazuliItemBlock(ModTemplates.getDefaultGemstoneSettings(MapColor.LAPIS_BLUE)));
 
     private static Block registerBlock(String name, Block block) {
-        Block registeredBlock = Registry.register(Registries.BLOCK, new Identifier(ItemsDisplayed.MOD_ID, name), block);
+        Block registeredBlock = Registry.register(Registries.BLOCK, Identifier.of(ItemsDisplayed.MOD_ID, name), block);
         registerDebugItem(name, registeredBlock);
 
         return registeredBlock;
@@ -116,7 +116,7 @@ public class ModBlocks {
 
     private static void registerDebugItem(String name, Block block) {
         DebugBlockItem debugBlockItem = new DebugBlockItem(block, new Item.Settings());
-        Registry.register(Registries.ITEM, new Identifier(ItemsDisplayed.MOD_ID, name), debugBlockItem);
+        Registry.register(Registries.ITEM, Identifier.of(ItemsDisplayed.MOD_ID, name), debugBlockItem);
     }
 
     public static void registerBlocks() {

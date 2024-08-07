@@ -23,6 +23,6 @@ public class LoadServerWorldEvent implements ServerWorldEvents.Load {
     }
 
     private Item getDroppedItem(Block block, ServerWorld world) {
-        return Block.getDroppedStacks(block.getDefaultState(), world, BlockPos.ORIGIN, null).get(0).getItem();
+        return Block.getDroppedStacks(block.getDefaultState(), world, BlockPos.ORIGIN, null).getFirst().getItem();
     }
 }

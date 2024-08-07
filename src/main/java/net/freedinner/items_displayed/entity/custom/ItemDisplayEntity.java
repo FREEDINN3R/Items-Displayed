@@ -9,6 +9,7 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
+import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
@@ -20,10 +21,12 @@ import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Arm;
 import net.minecraft.util.Hand;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
@@ -224,6 +227,8 @@ public class ItemDisplayEntity extends LivingEntity {
             return false;
         }
 
+        ServerWorld serverWorld = (ServerWorld) this.getWorld();
+
         if (source.isIn(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
             kill();
             return false;
@@ -234,14 +239,14 @@ public class ItemDisplayEntity extends LivingEntity {
         }
 
         if (source.isIn(DamageTypeTags.IS_EXPLOSION)) {
-            breakAndDropItem(source);
+            breakAndDropItem(serverWorld, source);
             kill();
             return false;
         }
 
         if (source.isIn(DamageTypeTags.IGNITES_ARMOR_STANDS)) {
             if (this.isOnFire()) {
-                updateHealth(source, 0.15f);
+                updateHealth(serverWorld, source, 0.15f);
             } else {
                 setOnFireFor(5);
             }
@@ -250,7 +255,7 @@ public class ItemDisplayEntity extends LivingEntity {
         }
 
         if (source.isIn(DamageTypeTags.BURNS_ARMOR_STANDS) && getHealth() > 0.5f) {
-            updateHealth(source, 4.0f);
+            updateHealth(serverWorld, source, 4.0f);
             return false;
         }
 
@@ -278,7 +283,7 @@ public class ItemDisplayEntity extends LivingEntity {
 
         long currTime = getWorld().getTime();
         if (currTime - lastHitTime <= 5L || isProjectile) {
-            breakAndDropItem(source);
+            breakAndDropItem(serverWorld, source);
             spawnBreakParticles();
             kill();
         } else {
@@ -319,10 +324,10 @@ public class ItemDisplayEntity extends LivingEntity {
         }
     }
 
-    private void updateHealth(DamageSource damageSource, float amount) {
+    private void updateHealth(ServerWorld world, DamageSource damageSource, float amount) {
         float f = getHealth() - amount;
         if (f <= 0.5f) {
-            onBreak(damageSource);
+            onBreak(world, damageSource);
             kill();
         } else {
             setHealth(f);
@@ -330,15 +335,15 @@ public class ItemDisplayEntity extends LivingEntity {
         }
     }
 
-    private void breakAndDropItem(DamageSource damageSource) {
+    private void breakAndDropItem(ServerWorld world, DamageSource damageSource) {
         ItemStack itemStack = new ItemStack(ModItems.ITEM_DISPLAY);
         Block.dropStack(getWorld(), getBlockPos(), itemStack);
-        onBreak(damageSource);
+        onBreak(world, damageSource);
     }
 
-    private void onBreak(DamageSource damageSource) {
+    private void onBreak(ServerWorld world, DamageSource damageSource) {
         playBreakSound();
-        drop(damageSource);
+        drop(world, damageSource);
 
         if (!displayedItem.isEmpty()) {
             Block.dropStack(getWorld(), getBlockPos(), displayedItem);

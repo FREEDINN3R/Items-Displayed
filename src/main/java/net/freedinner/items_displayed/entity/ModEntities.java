@@ -14,10 +14,10 @@ import net.minecraft.util.Identifier;
 public class ModEntities {
     public static final EntityType<ItemDisplayEntity> ITEM_DISPLAY = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier(ItemsDisplayed.MOD_ID, "item_display"),
-            FabricEntityTypeBuilder
-                    .create(SpawnGroup.MISC, ItemDisplayEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.7f, 0.7f))
+            Identifier.of(ItemsDisplayed.MOD_ID, "item_display"),
+            EntityType.Builder
+                    .create(ItemDisplayEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.7f, 0.7f)
                     .build()
     );
 

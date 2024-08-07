@@ -18,7 +18,7 @@ public class ItemDisplayEntityRenderer extends LivingEntityRenderer<ItemDisplayE
 
     @Override
     public Identifier getTexture(ItemDisplayEntity entity) {
-        return new Identifier(ItemsDisplayed.MOD_ID, "textures/entity/item_display.png");
+        return Identifier.of(ItemsDisplayed.MOD_ID, "textures/entity/item_display.png");
     }
 
     @Override

@@ -3,7 +3,7 @@ package net.freedinner.items_displayed.event;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.freedinner.items_displayed.config.ModConfigs;
 import net.freedinner.items_displayed.util.BlockItemMapper;
-import net.minecraft.client.item.TooltipType;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;

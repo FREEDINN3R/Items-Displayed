@@ -15,7 +15,7 @@ import net.minecraft.util.Identifier;
 
 public class ItemsDisplayedClient implements ClientModInitializer {
 	public static final EntityModelLayer ITEM_DISPLAY_MODEL_LAYER = new EntityModelLayer(
-			new Identifier(ItemsDisplayed.MOD_ID, "item_display"),
+			Identifier.of(ItemsDisplayed.MOD_ID, "item_display"),
 			"item_display_model_layer"
 	);
 
