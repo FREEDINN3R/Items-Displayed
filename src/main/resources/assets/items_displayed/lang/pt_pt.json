@@ -4,15 +4,15 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Exibição de Item",
 
-  "tag.item.items_displayed.sherds" : "Fragmentos",
-  "tag.item.items_displayed.smithing_templates" : "Modelos de forjamento",
-
   "item.items_displayed.tooltip.shift_place": "Pode ser colocado ao segurar Shift",
-
   "item.items_displayed.tooltip.shift_more_info": "Pressione Shift para mais informações",
   "item.items_displayed.tooltip.item_display_0": "Pode ser usado para exibir:",
   "item.items_displayed.tooltip.item_display_1": " - Fragmentos",
   "item.items_displayed.tooltip.item_display_2": " - Modelos de forjamento",
+  "item.items_displayed.tooltip.debug": "Você não deveria ter este item...",
 
-  "item.items_displayed.tooltip.debug": "Você não deveria ter este item..."
+  "tag.item.items_displayed.sherds" : "Fragmentos",
+  "tag.item.items_displayed.smithing_templates" : "Modelos de forjamento",
+
+  "entity.items_displayed.item_display": "Exibição de Item"
 }

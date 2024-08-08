@@ -4,15 +4,15 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Gegenstandsdarsteller",
 
-  "tag.item.items_displayed.sherds" : "Töpferscherben",
-  "tag.item.items_displayed.smithing_templates" : "Schmiedevorlagen",
-
   "item.items_displayed.tooltip.shift_place": "Kann platziert werden, während Shift gedrückt wird",
-
   "item.items_displayed.tooltip.shift_more_info": "Shift für weitere Informationen drücken",
   "item.items_displayed.tooltip.item_display_0": "Können dargestellt werden:",
   "item.items_displayed.tooltip.item_display_1": " - Töpferscherben",
   "item.items_displayed.tooltip.item_display_2": " - Schmiedevorlagen",
+  "item.items_displayed.tooltip.debug": "Du solltest diesen Gegenstand eigentlich nicht haben können...",
 
-  "item.items_displayed.tooltip.debug": "Du solltest diesen Gegenstand eigentlich nicht haben können..."
+  "tag.item.items_displayed.sherds" : "Töpferscherben",
+  "tag.item.items_displayed.smithing_templates" : "Schmiedevorlagen",
+
+  "entity.items_displayed.item_display": "Gegenstandsdarsteller"
 }

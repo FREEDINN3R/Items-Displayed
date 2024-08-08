@@ -4,15 +4,15 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Mostrar Objeto",
 
-  "tag.item.items_displayed.sherds" : "Fragmentos",
-  "tag.item.items_displayed.smithing_templates" : "Plantillas de forja",
-
   "item.items_displayed.tooltip.shift_place": "Puede ser colocado al sostener Shift",
-
   "item.items_displayed.tooltip.shift_more_info": "Presiona Shift para más información",
   "item.items_displayed.tooltip.item_display_0": "Puede ser utilizado para mostrar:",
   "item.items_displayed.tooltip.item_display_1": " - Fragmentos",
   "item.items_displayed.tooltip.item_display_2": " - Plantillas de forja",
+  "item.items_displayed.tooltip.debug": "No deberías poder tener este objeto...",
 
-  "item.items_displayed.tooltip.debug": "No deberías poder tener este objeto..."
+  "tag.item.items_displayed.sherds" : "Fragmentos",
+  "tag.item.items_displayed.smithing_templates" : "Plantillas de forja",
+
+  "entity.items_displayed.item_display": "Mostrar Objeto"
 }

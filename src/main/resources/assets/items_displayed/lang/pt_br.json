@@ -4,15 +4,15 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Mostrador de itens",
 
-  "tag.item.items_displayed.sherds" : "Óstracos",
-  "tag.item.items_displayed.smithing_templates" : "Moldes de ferraria",
-
   "item.items_displayed.tooltip.shift_place": "Pode ser colocado enquanto agachado",
-
   "item.items_displayed.tooltip.shift_more_info": "Pressione o botão de Agachar para mais informações",
   "item.items_displayed.tooltip.item_display_0": "Pode ser usado para exibir:",
   "item.items_displayed.tooltip.item_display_1": " - Óstracos",
   "item.items_displayed.tooltip.item_display_2": " - Moldes de ferraria",
+  "item.items_displayed.tooltip.debug": "Você não deveria ter esse item...",
 
-  "item.items_displayed.tooltip.debug": "Você não deveria ter esse item..."
+  "tag.item.items_displayed.sherds" : "Óstracos",
+  "tag.item.items_displayed.smithing_templates" : "Moldes de ferraria",
+
+  "entity.items_displayed.item_display": "Mostrador de itens"
 }

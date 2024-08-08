@@ -4,15 +4,15 @@
   "item.items_displayed.item_group_name": "Items Displayed",
   "item.items_displayed.item_display": "Affichage d'Objet",
 
-  "tag.item.items_displayed.sherds" : "Éclats",
-  "tag.item.items_displayed.smithing_templates" : "Modèles de forge",
-
   "item.items_displayed.tooltip.shift_place": "Peut être placé en maintenant Maj enfoncée",
-
   "item.items_displayed.tooltip.shift_more_info": "Appuyez sur Maj pour plus d'informations",
   "item.items_displayed.tooltip.item_display_0": "Peut être utilisé pour afficher :",
   "item.items_displayed.tooltip.item_display_1": " - Éclats",
   "item.items_displayed.tooltip.item_display_2": " - Modèles de forge",
+  "item.items_displayed.tooltip.debug": "Vous ne devriez normalement pas avoir cet objet...",
 
-  "item.items_displayed.tooltip.debug": "Vous ne devriez normalement pas avoir cet objet..."
+  "tag.item.items_displayed.sherds" : "Éclats",
+  "tag.item.items_displayed.smithing_templates" : "Modèles de forge",
+
+  "entity.items_displayed.item_display": "Affichage d'Objet"
 }
