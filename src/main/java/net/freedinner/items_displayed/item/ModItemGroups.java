@@ -30,7 +30,9 @@ public class ModItemGroups {
                             entries.add(Items.BURN_POTTERY_SHERD);
                             entries.add(Items.DANGER_POTTERY_SHERD);
                             entries.add(Items.EXPLORER_POTTERY_SHERD);
+                            entries.add(Items.FLOW_POTTERY_SHERD);
                             entries.add(Items.FRIEND_POTTERY_SHERD);
+                            entries.add(Items.GUSTER_POTTERY_SHERD);
                             entries.add(Items.HEART_POTTERY_SHERD);
                             entries.add(Items.HEARTBREAK_POTTERY_SHERD);
                             entries.add(Items.HOWL_POTTERY_SHERD);
@@ -38,6 +40,7 @@ public class ModItemGroups {
                             entries.add(Items.MOURNER_POTTERY_SHERD);
                             entries.add(Items.PLENTY_POTTERY_SHERD);
                             entries.add(Items.PRIZE_POTTERY_SHERD);
+                            entries.add(Items.SCRAPE_POTTERY_SHERD);
                             entries.add(Items.SHEAF_POTTERY_SHERD);
                             entries.add(Items.SHELTER_POTTERY_SHERD);
                             entries.add(Items.SKULL_POTTERY_SHERD);
@@ -60,6 +63,7 @@ public class ModItemGroups {
                             entries.add(Items.RIB_ARMOR_TRIM_SMITHING_TEMPLATE);
                             entries.add(Items.EYE_ARMOR_TRIM_SMITHING_TEMPLATE);
                             entries.add(Items.SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE);
+                            entries.add(Items.FLOW_ARMOR_TRIM_SMITHING_TEMPLATE);
 
                             entries.add(Items.IRON_INGOT);
                             entries.add(Items.COPPER_INGOT);

@@ -69,6 +69,8 @@ public class ModBlocks {
             ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.DRIPSTONE_BLOCK));
     public static final Block EYE_ARMOR_TRIM = registerBlock("eye_armor_trim",
             ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.CALCITE));
+    public static final Block FLOW_ARMOR_TRIM = registerBlock("flow_armor_trim",
+            ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.DEEPSLATE_TILES));
     public static final Block HOST_ARMOR_TRIM = registerBlock("host_armor_trim",
             ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.GRAVEL));
     public static final Block RAISER_ARMOR_TRIM = registerBlock("raiser_armor_trim",
