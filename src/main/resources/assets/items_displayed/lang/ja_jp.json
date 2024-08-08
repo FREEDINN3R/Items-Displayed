@@ -1,18 +1,18 @@
 {
-  "items_displayed.credit": "Translation made by ChatGPT; review from a native is needed!",
+  "items_displayed.credit": "Translation made by ut-64bit",
 
   "item.items_displayed.item_group_name": "Items Displayed",
-  "item.items_displayed.item_display": "アイテム表示",
+  "item.items_displayed.item_display": "展示台",
 
-  "item.items_displayed.tooltip.shift_place": "Shift を押しながら配置可能",
-  "item.items_displayed.tooltip.shift_more_info": "詳細情報には Shift を押してください",
-  "item.items_displayed.tooltip.item_display_0": "以下を表示するために使用できます：",
-  "item.items_displayed.tooltip.item_display_1": " - シャード",
-  "item.items_displayed.tooltip.item_display_2": " - 鍛冶のテンプレート",
+  "item.items_displayed.tooltip.shift_place": "Shift を押しながら設置可能",
+  "item.items_displayed.tooltip.shift_more_info": "詳細を表示するには Shift を長押し",
+  "item.items_displayed.tooltip.item_display_0": "展示可能:",
+  "item.items_displayed.tooltip.item_display_1": " - 壺の欠片",
+  "item.items_displayed.tooltip.item_display_2": " - 鍛冶型",
   "item.items_displayed.tooltip.debug": "このアイテムを持っているべきではありません...",
 
-  "tag.item.items_displayed.sherds" : "シャード",
-  "tag.item.items_displayed.smithing_templates" : "鍛冶のテンプレート",
+  "tag.item.items_displayed.sherds" : "壺の欠片",
+  "tag.item.items_displayed.smithing_templates" : "鍛冶型",
 
-  "entity.items_displayed.item_display": "アイテム表示"
+  "entity.items_displayed.item_display": "展示台"
 }
