@@ -13,7 +13,7 @@ public class ModItems {
             new ItemDisplayItem(new Item.Settings()));
 
     private static Item register(String name, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(ItemsDisplayed.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, ItemsDisplayed.id(name), item);
     }
 
     public static void registerItems() {

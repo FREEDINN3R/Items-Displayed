@@ -17,7 +17,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 public record S2CLoadMapsPacket(BiMap<Block, Item> blockItemMap) implements CustomPayload {
-    public static final CustomPayload.Id<S2CLoadMapsPacket> ID = new CustomPayload.Id<>(Identifier.of(ItemsDisplayed.MOD_ID, "client_load_maps"));
+    public static final CustomPayload.Id<S2CLoadMapsPacket> ID = new CustomPayload.Id<>(ItemsDisplayed.id("client_load_maps"));
     public static final PacketCodec<RegistryByteBuf, S2CLoadMapsPacket> CODEC = CustomPayload.codecOf(
             S2CLoadMapsPacket::write,
             S2CLoadMapsPacket::new

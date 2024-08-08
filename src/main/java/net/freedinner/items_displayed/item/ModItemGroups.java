@@ -2,14 +2,12 @@ package net.freedinner.items_displayed.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.freedinner.items_displayed.ItemsDisplayed;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
     public static ItemGroup ITEMS_DISPLAYED;
@@ -17,7 +15,7 @@ public class ModItemGroups {
     static {
         ITEMS_DISPLAYED = Registry.register(
                 Registries.ITEM_GROUP,
-                Identifier.of(ItemsDisplayed.MOD_ID, "item_group"),
+                ItemsDisplayed.id("item_group"),
                 FabricItemGroup.builder()
                         .displayName(Text.translatable("item.items_displayed.item_group_name"))
                         .icon(() -> new ItemStack(ModItems.ITEM_DISPLAY))

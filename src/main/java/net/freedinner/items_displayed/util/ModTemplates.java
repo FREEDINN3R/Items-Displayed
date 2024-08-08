@@ -11,31 +11,31 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.sound.BlockSoundGroup;
 
 public class ModTemplates {
-    public static Block getDefaultSherdBlock() {
+    public static Block defaultSherdBlock() {
         return new SherdBlock(defaultSettings()
                 .mapColor(MapColor.TERRACOTTA_RED)
                 .sounds(BlockSoundGroup.DECORATED_POT));
     }
 
-    public static Block getDefaultNetheriteUpgradeBlock() {
+    public static Block defaultUpgradeBlock() {
         return new NetheriteUpgradeBlock(defaultSettings()
                 .mapColor(MapColor.DARK_RED)
                 .sounds(BlockSoundGroup.NETHERRACK));
     }
 
-    public static Block getDefaultArmorTrimBlock(BlockSoundGroup soundGroup) {
+    public static Block defaultArmorTrimBlock(BlockSoundGroup soundGroup) {
         return new ArmorTrimBlock(defaultSettings()
                 .mapColor(MapColor.STONE_GRAY)
                 .sounds(soundGroup));
     }
 
-    public static Block getDefaultIngotBlock(MapColor mapColor) {
+    public static Block defaultIngotBlock(MapColor mapColor) {
         return new IngotBlock(defaultSettings()
                 .mapColor(mapColor)
                 .sounds(BlockSoundGroup.NETHERITE));
     }
 
-    public static AbstractBlock.Settings getDefaultGemstoneSettings(MapColor mapColor) {
+    public static AbstractBlock.Settings defaultGemstoneSettings(MapColor mapColor) {
         return defaultSettings()
                 .mapColor(mapColor)
                 .sounds(BlockSoundGroup.METAL);

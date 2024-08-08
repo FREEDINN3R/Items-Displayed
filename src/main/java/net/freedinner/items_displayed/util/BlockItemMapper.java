@@ -2,15 +2,10 @@ package net.freedinner.items_displayed.util;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
-import net.freedinner.items_displayed.ItemsDisplayed;
 import net.freedinner.items_displayed.config.ModConfigs;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
-
-import java.util.Map;
 
 public class BlockItemMapper {
     private static BiMap<Block, Item> blockItemMap = HashBiMap.create();
