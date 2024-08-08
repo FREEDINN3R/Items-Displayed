@@ -30,7 +30,11 @@ public class ModBlocks {
             ModTemplates.defaultSherdBlock());
     public static final Block EXPLORER_POTTERY_SHERD = registerBlock("explorer_pottery_sherd",
             ModTemplates.defaultSherdBlock());
+    public static final Block FLOW_POTTERY_SHERD = registerBlock("flow_pottery_sherd",
+            ModTemplates.defaultSherdBlock());
     public static final Block FRIEND_POTTERY_SHERD = registerBlock("friend_pottery_sherd",
+            ModTemplates.defaultSherdBlock());
+    public static final Block GUSTER_POTTERY_SHERD = registerBlock("guster_pottery_sherd",
             ModTemplates.defaultSherdBlock());
     public static final Block HEART_POTTERY_SHERD = registerBlock("heart_pottery_sherd",
             ModTemplates.defaultSherdBlock());
@@ -45,6 +49,8 @@ public class ModBlocks {
     public static final Block PLENTY_POTTERY_SHERD = registerBlock("plenty_pottery_sherd",
             ModTemplates.defaultSherdBlock());
     public static final Block PRIZE_POTTERY_SHERD = registerBlock("prize_pottery_sherd",
+            ModTemplates.defaultSherdBlock());
+    public static final Block SCRAPE_POTTERY_SHERD = registerBlock("scrape_pottery_sherd",
             ModTemplates.defaultSherdBlock());
     public static final Block SHEAF_POTTERY_SHERD = registerBlock("sheaf_pottery_sherd",
             ModTemplates.defaultSherdBlock());
