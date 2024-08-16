@@ -64,6 +64,7 @@ public class ModItemGroups {
                             entries.add(Items.EYE_ARMOR_TRIM_SMITHING_TEMPLATE);
                             entries.add(Items.SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE);
                             entries.add(Items.FLOW_ARMOR_TRIM_SMITHING_TEMPLATE);
+                            entries.add(Items.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE);
 
                             entries.add(Items.IRON_INGOT);
                             entries.add(Items.COPPER_INGOT);

@@ -63,6 +63,8 @@ public class ModBlocks {
 
     public static final Block NETHERITE_UPGRADE = registerBlock("netherite_upgrade",
             ModTemplates.defaultUpgradeBlock());
+    public static final Block BOLT_ARMOR_TRIM = registerBlock("bolt_armor_trim",
+            ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.COPPER));
     public static final Block COAST_ARMOR_TRIM = registerBlock("coast_armor_trim",
             ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.STONE));
     public static final Block DUNE_ARMOR_TRIM = registerBlock("dune_armor_trim",
