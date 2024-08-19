@@ -29,10 +29,12 @@ public class ModTemplates {
                 .sounds(soundGroup));
     }
 
-    public static Block defaultIngotBlock(MapColor mapColor) {
+    public static Block defaultIngotBlock(MapColor mapColor, boolean metal) {
+        BlockSoundGroup soundGroup = metal ? BlockSoundGroup.NETHERITE : BlockSoundGroup.STONE;
+
         return new IngotBlock(defaultSettings()
                 .mapColor(mapColor)
-                .sounds(BlockSoundGroup.NETHERITE));
+                .sounds(soundGroup));
     }
 
     public static AbstractBlock.Settings defaultGemstoneSettings(MapColor mapColor) {

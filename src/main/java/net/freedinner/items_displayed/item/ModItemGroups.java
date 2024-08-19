@@ -66,6 +66,8 @@ public class ModItemGroups {
                             entries.add(Items.FLOW_ARMOR_TRIM_SMITHING_TEMPLATE);
                             entries.add(Items.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE);
 
+                            entries.add(Items.BRICK);
+                            entries.add(Items.NETHER_BRICK);
                             entries.add(Items.IRON_INGOT);
                             entries.add(Items.COPPER_INGOT);
                             entries.add(Items.GOLD_INGOT);

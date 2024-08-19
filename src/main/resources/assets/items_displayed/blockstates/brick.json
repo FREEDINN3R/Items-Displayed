@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "ingots=1,facing=north": {
+      "model": "items_displayed:block/ingot/brick_1"
+    },
+    "ingots=1,facing=south": {
+      "model": "items_displayed:block/ingot/brick_1",
+      "y": 180
+    },
+    "ingots=1,facing=west": {
+      "model": "items_displayed:block/ingot/brick_1",
+      "y": 270
+    },
+    "ingots=1,facing=east": {
+      "model": "items_displayed:block/ingot/brick_1",
+      "y": 90
+    },
+    "ingots=2,facing=north": {
+      "model": "items_displayed:block/ingot/brick_2"
+    },
+    "ingots=2,facing=south": {
+      "model": "items_displayed:block/ingot/brick_2",
+      "y": 180
+    },
+    "ingots=2,facing=west": {
+      "model": "items_displayed:block/ingot/brick_2",
+      "y": 270
+    },
+    "ingots=2,facing=east": {
+      "model": "items_displayed:block/ingot/brick_2",
+      "y": 90
+    },
+    "ingots=3,facing=north": {
+      "model": "items_displayed:block/ingot/brick_3"
+    },
+    "ingots=3,facing=south": {
+      "model": "items_displayed:block/ingot/brick_3",
+      "y": 180
+    },
+    "ingots=3,facing=west": {
+      "model": "items_displayed:block/ingot/brick_3",
+      "y": 270
+    },
+    "ingots=3,facing=east": {
+      "model": "items_displayed:block/ingot/brick_3",
+      "y": 90
+    }
+  }
+}

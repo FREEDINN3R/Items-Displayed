@@ -100,14 +100,18 @@ public class ModBlocks {
     public static final Block WILD_ARMOR_TRIM = registerBlock("wild_armor_trim",
             ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.STONE));
 
+    public static final Block BRICK = registerBlock("brick",
+            ModTemplates.defaultIngotBlock(MapColor.RED, false));
+    public static final Block NETHER_BRICK = registerBlock("nether_brick",
+            ModTemplates.defaultIngotBlock(MapColor.DARK_RED, false));
     public static final Block IRON_INGOT = registerBlock("iron_ingot",
-            ModTemplates.defaultIngotBlock(MapColor.IRON_GRAY));
+            ModTemplates.defaultIngotBlock(MapColor.IRON_GRAY, true));
     public static final Block COPPER_INGOT = registerBlock("copper_ingot",
-            ModTemplates.defaultIngotBlock(MapColor.ORANGE));
+            ModTemplates.defaultIngotBlock(MapColor.ORANGE, true));
     public static final Block GOLD_INGOT = registerBlock("gold_ingot",
-            ModTemplates.defaultIngotBlock(MapColor.GOLD));
+            ModTemplates.defaultIngotBlock(MapColor.GOLD, true));
     public static final Block NETHERITE_INGOT = registerBlock("netherite_ingot",
-            ModTemplates.defaultIngotBlock(MapColor.BLACK));
+            ModTemplates.defaultIngotBlock(MapColor.BLACK, true));
 
     public static final Block DIAMOND = registerBlock("diamond",
             new DiamondItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.DIAMOND_BLUE)));

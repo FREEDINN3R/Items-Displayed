@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "items_displayed:nether_brick",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "ingots": "2"
+                  }
+                }
+              ],
+              "count": 2.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "items_displayed:nether_brick",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "ingots": "3"
+                  }
+                }
+              ],
+              "count": 3.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:nether_brick"
+        }
+      ]
+    }
+  ]
+}
