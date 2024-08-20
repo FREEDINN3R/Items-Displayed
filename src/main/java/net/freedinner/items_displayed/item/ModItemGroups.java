@@ -73,9 +73,10 @@ public class ModItemGroups {
                             entries.add(Items.GOLD_INGOT);
                             entries.add(Items.NETHERITE_INGOT);
 
+                            entries.add(Items.LAPIS_LAZULI);
+                            entries.add(Items.AMETHYST_SHARD);
                             entries.add(Items.DIAMOND);
                             entries.add(Items.EMERALD);
-                            entries.add(Items.LAPIS_LAZULI);
                         })
                         .build()
         );
