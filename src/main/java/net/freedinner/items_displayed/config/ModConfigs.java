@@ -16,9 +16,9 @@ public class ModConfigs {
     private static final String APPEND_EXTRA_TOOLTIPS_KEY = "append_extra_tooltips";
     private static final boolean APPEND_EXTRA_TOOLTIPS_DEFAULT = true;
 
-    public static int ITEM_DISPLAY_ROTATION_ANGLE;
-    private static final String ITEM_DISPLAY_ROTATION_ANGLE_KEY = "item_display_rotation_angle";
-    private static final int ITEM_DISPLAY_ROTATION_ANGLE_DEFAULT = 15;
+    public static int ENTITY_ROTATION_ANGLE;
+    private static final String ENTITY_ROTATION_ANGLE_KEY = "entity_rotation_angle";
+    private static final int ENTITY_ROTATION_ANGLE_DEFAULT = 15;
 
     public static ArrayList<String> BLACKLISTED_ITEMS;
     private static final String BLACKLISTED_ITEMS_KEY = "blacklisted_items";
@@ -46,11 +46,11 @@ public class ModConfigs {
         configProvider.addField(APPEND_EXTRA_TOOLTIPS_KEY, APPEND_EXTRA_TOOLTIPS_DEFAULT);
         configProvider.addComment("");
 
-        configProvider.addComment("Min angle by which Item Display entity can be rotated");
+        configProvider.addComment("Min angle by which entities from this mod (e.g., Item Display) can be rotated");
         configProvider.addComment("Example: for Armor Stands this value is 45, and its rotation snaps to the closest 45-degree angle");
         configProvider.addComment("Min value = 1, max value = 90");
         configProvider.addComment("Use only the divisors of 90 (3, 5, 15, etc.) to prevent strange behavior");
-        configProvider.addField(ITEM_DISPLAY_ROTATION_ANGLE_KEY, ITEM_DISPLAY_ROTATION_ANGLE_DEFAULT);
+        configProvider.addField(ENTITY_ROTATION_ANGLE_KEY, ENTITY_ROTATION_ANGLE_DEFAULT);
         configProvider.addComment("");
 
         configProvider.addComment("Blacklisted items which the player shouldn't be able to place");
@@ -63,8 +63,8 @@ public class ModConfigs {
     private static void assignConfigs() {
         APPEND_ITEM_TOOLTIPS = CONFIG.getOrDefault(APPEND_ITEM_TOOLTIPS_KEY, APPEND_ITEM_TOOLTIPS_DEFAULT);
         APPEND_EXTRA_TOOLTIPS = CONFIG.getOrDefault(APPEND_EXTRA_TOOLTIPS_KEY, APPEND_EXTRA_TOOLTIPS_DEFAULT);
-        ITEM_DISPLAY_ROTATION_ANGLE = MathHelper.clamp(
-                CONFIG.getOrDefault(ITEM_DISPLAY_ROTATION_ANGLE_KEY, ITEM_DISPLAY_ROTATION_ANGLE_DEFAULT), 1, 90
+        ENTITY_ROTATION_ANGLE = MathHelper.clamp(
+                CONFIG.getOrDefault(ENTITY_ROTATION_ANGLE_KEY, ENTITY_ROTATION_ANGLE_DEFAULT), 1, 90
         );
         BLACKLISTED_ITEMS = configArrayToList(
                 CONFIG.getOrDefault(BLACKLISTED_ITEMS_KEY, BLACKLISTED_ITEMS_DEFAULT)

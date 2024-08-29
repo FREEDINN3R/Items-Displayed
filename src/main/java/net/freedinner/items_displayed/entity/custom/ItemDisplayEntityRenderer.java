@@ -13,7 +13,7 @@ public class ItemDisplayEntityRenderer extends LivingEntityRenderer<ItemDisplayE
 
     public ItemDisplayEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new ItemDisplayEntityModel(context.getPart(ItemsDisplayedClient.ITEM_DISPLAY_MODEL_LAYER)), 0.0f);
-        addFeature(new DisplayedItemFeatureRenderer(this, context.getHeldItemRenderer()));
+        addFeature(new ItemDisplayFeatureRenderer(this, context.getHeldItemRenderer()));
     }
 
     @Override

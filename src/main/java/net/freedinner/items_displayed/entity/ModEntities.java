@@ -3,6 +3,7 @@ package net.freedinner.items_displayed.entity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.freedinner.items_displayed.ItemsDisplayed;
 import net.freedinner.items_displayed.entity.custom.ItemDisplayEntity;
+import net.freedinner.items_displayed.entity.custom.JewelryPillowEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -18,8 +19,18 @@ public class ModEntities {
                     .build()
     );
 
+    public static final EntityType<JewelryPillowEntity> JEWELRY_PILLOW = Registry.register(
+            Registries.ENTITY_TYPE,
+            ItemsDisplayed.id( "jewelry_pillow"),
+            EntityType.Builder
+                    .create(JewelryPillowEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.8f, 0.4f)
+                    .build()
+    );
+
     static {
         FabricDefaultAttributeRegistry.register(ITEM_DISPLAY, ItemDisplayEntity.createLivingAttributes());
+        FabricDefaultAttributeRegistry.register(JEWELRY_PILLOW, JewelryPillowEntity.createLivingAttributes());
     }
 
     public static void registerEntities() {

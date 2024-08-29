@@ -16,16 +16,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Arm;
 import net.minecraft.util.math.RotationAxis;
 
-public class DisplayedItemFeatureRenderer extends FeatureRenderer<ItemDisplayEntity, ItemDisplayEntityModel> {
-    private final HeldItemRenderer displayedItemRenderer;
-    
-    public DisplayedItemFeatureRenderer(FeatureRendererContext<ItemDisplayEntity, ItemDisplayEntityModel> context, HeldItemRenderer heldItemRenderer) {
+public class JewelryPillowFeatureRenderer extends FeatureRenderer<JewelryPillowEntity, JewelryPillowEntityModel> {
+    private final HeldItemRenderer heldItemRenderer;
+
+    public JewelryPillowFeatureRenderer(FeatureRendererContext<JewelryPillowEntity, JewelryPillowEntityModel> context, HeldItemRenderer heldItemRenderer) {
         super(context);
-        displayedItemRenderer = heldItemRenderer;
+        this.heldItemRenderer = heldItemRenderer;
     }
 
     @Override
-    public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, ItemDisplayEntity entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
+    public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, JewelryPillowEntity entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
         ItemStack itemStack = entity.getMainHandStack();
 
         if (itemStack.isEmpty()) {
@@ -39,19 +39,14 @@ public class DisplayedItemFeatureRenderer extends FeatureRenderer<ItemDisplayEnt
         matrices.push();
 
         ((ModelWithArms)getContextModel()).setArmAngle(Arm.RIGHT, matrices);
-        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-120.0f));
+        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-157.0f));
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f));
 
-        if (itemStack.isIn(ModTags.SHERDS)) {
-            matrices.translate(0f, -0.11f, -0.94f);
-        }
-        else if (itemStack.isIn(ModTags.SMITHING_TEMPLATES)) {
-            matrices.translate(0f, -0.11f, -1.01f);
-        }
+        matrices.translate(0f, -0.66f, -0.52f);
 
         Block block = BlockItemMapper.getBlockOrNull(itemStack.getItem(), true);
         ItemStack blockItemStack = new ItemStack(block == null ? Blocks.AIR : block.asItem());
-        this.displayedItemRenderer.renderItem(entity, blockItemStack, ModelTransformationMode.THIRD_PERSON_RIGHT_HAND, false, matrices, vertexConsumers, light);
+        this.heldItemRenderer.renderItem(entity, blockItemStack, ModelTransformationMode.THIRD_PERSON_RIGHT_HAND, false, matrices, vertexConsumers, light);
 
         matrices.pop();
     }

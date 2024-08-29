@@ -21,6 +21,7 @@ public class ModItemGroups {
                         .icon(() -> new ItemStack(ModItems.ITEM_DISPLAY))
                         .entries((displayContext, entries) -> {
                             entries.add(ModItems.ITEM_DISPLAY);
+                            entries.add(ModItems.JEWELRY_PILLOW);
 
                             entries.add(Items.ANGLER_POTTERY_SHERD);
                             entries.add(Items.ARCHER_POTTERY_SHERD);
