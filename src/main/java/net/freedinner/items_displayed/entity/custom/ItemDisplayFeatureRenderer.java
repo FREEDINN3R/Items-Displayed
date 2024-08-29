@@ -42,10 +42,10 @@ public class ItemDisplayFeatureRenderer extends FeatureRenderer<ItemDisplayEntit
         matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-120.0f));
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f));
 
-        if (itemStack.isIn(ModTags.SHERDS)) {
+        if (itemStack.isIn(ModTags.SHERD_SHAPED)) {
             matrices.translate(0f, -0.11f, -0.94f);
         }
-        else if (itemStack.isIn(ModTags.SMITHING_TEMPLATES)) {
+        else if (itemStack.isIn(ModTags.TEMPLATE_SHAPED)) {
             matrices.translate(0f, -0.11f, -1.01f);
         }
 

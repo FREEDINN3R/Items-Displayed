@@ -123,7 +123,7 @@ public class ItemDisplayEntity extends LivingEntity {
 
     @Override
     public boolean canEquip(ItemStack stack) {
-        return stack.isIn(ModTags.SHERDS) || stack.isIn(ModTags.SMITHING_TEMPLATES);
+        return stack.isIn(ModTags.SHERD_SHAPED) || stack.isIn(ModTags.TEMPLATE_SHAPED);
     }
 
     @Override

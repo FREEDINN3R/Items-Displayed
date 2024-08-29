@@ -123,7 +123,7 @@ public class JewelryPillowEntity extends LivingEntity {
 
     @Override
     public boolean canEquip(ItemStack stack) {
-        return stack.isIn(ModTags.GEMSTONES) || stack.isIn(ModTags.INGOTS);
+        return stack.isIn(ModTags.GEMSTONE_SHAPED) || stack.isIn(ModTags.CRYSTAL_SHAPED);
     }
 
     @Override
