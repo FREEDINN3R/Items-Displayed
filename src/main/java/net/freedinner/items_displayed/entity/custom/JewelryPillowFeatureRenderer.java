@@ -39,14 +39,14 @@ public class JewelryPillowFeatureRenderer extends FeatureRenderer<JewelryPillowE
         matrices.push();
 
         ((ModelWithArms)getContextModel()).setArmAngle(Arm.RIGHT, matrices);
-        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-162.5f));
+        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-157.5f));
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f));
 
         if (itemStack.isIn(ModTags.GEMSTONE_SHAPED)) {
-            matrices.translate(0f, -0.69f, -0.4f);
+            matrices.translate(0f, -0.62f, -0.51f);
         }
         else if (itemStack.isIn(ModTags.CRYSTAL_SHAPED)) {
-            matrices.translate(0f, -0.73f, -0.4f);
+            matrices.translate(0f, -0.66f, -0.51f);
         }
 
         Block block = BlockItemMapper.getBlockOrNull(itemStack.getItem(), true);
