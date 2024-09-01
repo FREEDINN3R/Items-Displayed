@@ -19,7 +19,7 @@ public class JewelryPillowEntityRenderer extends LivingEntityRenderer<JewelryPil
 
     @Override
     public Identifier getTexture(JewelryPillowEntity entity) {
-        return ItemsDisplayed.id( "textures/entity/jewelry_pillow.png");
+        return ItemsDisplayed.id( "textures/entity/jewelry_pillow_base.png");
     }
 
     @Override

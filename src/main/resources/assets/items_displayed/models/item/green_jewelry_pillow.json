@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "items_displayed:item/green_jewelry_pillow"
+    "layer0": "items_displayed:item/jewelry_pillow/green_jewelry_pillow"
   }
 }
