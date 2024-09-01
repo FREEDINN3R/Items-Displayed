@@ -123,7 +123,7 @@ public class ModBlocks {
     public static final Block EMERALD = registerBlock("emerald",
             new EmeraldItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.EMERALD_GREEN)));
     public static final Block ECHO_SHARD = registerBlock("echo_shard",
-            new AmethystShardItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.BLACK)));
+            new AmethystShardItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.BLACK).sounds(BlockSoundGroup.SCULK_SHRIEKER)));
 
     private static Block registerBlock(String name, Block block) {
         Block registeredBlock = Registry.register(Registries.BLOCK, ItemsDisplayed.id(name), block);

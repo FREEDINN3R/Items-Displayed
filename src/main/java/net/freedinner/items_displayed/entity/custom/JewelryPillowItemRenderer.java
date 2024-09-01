@@ -46,7 +46,7 @@ public class JewelryPillowItemRenderer extends FeatureRenderer<JewelryPillowEnti
             matrices.translate(0f, -0.62f, -0.51f);
         }
         else if (itemStack.isIn(ModTags.CRYSTAL_SHAPED)) {
-            matrices.translate(0f, -0.66f, -0.51f);
+            matrices.translate(0f, -0.62f, -0.51f);
         }
 
         Block block = BlockItemMapper.getBlockOrNull(itemStack.getItem(), true);
