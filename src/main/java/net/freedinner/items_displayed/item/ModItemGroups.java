@@ -93,6 +93,7 @@ public class ModItemGroups {
                             entries.add(Items.AMETHYST_SHARD);
                             entries.add(Items.DIAMOND);
                             entries.add(Items.EMERALD);
+                            entries.add(Items.ECHO_SHARD);
                         })
                         .build()
         );

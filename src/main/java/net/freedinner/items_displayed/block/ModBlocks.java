@@ -122,6 +122,8 @@ public class ModBlocks {
             new DiamondItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.DIAMOND_BLUE)));
     public static final Block EMERALD = registerBlock("emerald",
             new EmeraldItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.EMERALD_GREEN)));
+    public static final Block ECHO_SHARD = registerBlock("echo_shard",
+            new AmethystShardItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.BLACK)));
 
     private static Block registerBlock(String name, Block block) {
         Block registeredBlock = Registry.register(Registries.BLOCK, ItemsDisplayed.id(name), block);
