@@ -23,7 +23,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 
 public class JewelryPillowColorRenderer extends FeatureRenderer<JewelryPillowEntity, JewelryPillowEntityModel> {
-    private static final Identifier SKIN = ItemsDisplayed.id("textures/entity/jewelry_pillow_color.png");
     private final JewelryPillowColorEntityModel model;
 
     public JewelryPillowColorRenderer(FeatureRendererContext<JewelryPillowEntity, JewelryPillowEntityModel> context, EntityModelLoader loader) {
@@ -33,7 +32,8 @@ public class JewelryPillowColorRenderer extends FeatureRenderer<JewelryPillowEnt
 
     @Override
     public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, JewelryPillowEntity jewelryPillow, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
-        int color = JewelryPillowEntity.getRgbColor(jewelryPillow.getColor());
-        render(this.getContextModel(), this.model, SKIN, matrices, vertexConsumers, light, jewelryPillow, limbAngle, limbDistance, animationProgress, headYaw, headPitch, tickDelta, color);
+        String color = jewelryPillow.getColor().getName();
+        Identifier skinId = ItemsDisplayed.id("textures/entity/jewelry_pillow/" + color + "_jewelry_pillow.png");
+        render(this.getContextModel(), this.model, skinId, matrices, vertexConsumers, light, jewelryPillow, limbAngle, limbDistance, animationProgress, headYaw, headPitch, tickDelta, 16383998);
     }
 }
