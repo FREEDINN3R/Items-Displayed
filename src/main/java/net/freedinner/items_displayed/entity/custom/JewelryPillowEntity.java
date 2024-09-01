@@ -1,5 +1,6 @@
 package net.freedinner.items_displayed.entity.custom;
 
+import com.google.common.collect.Maps;
 import net.freedinner.items_displayed.item.ModItems;
 import net.freedinner.items_displayed.item.ModTags;
 import net.minecraft.block.Block;
@@ -9,9 +10,13 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
+import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
+import net.minecraft.item.DyeItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.BlockStateParticleEffect;
@@ -20,27 +25,71 @@ import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Arm;
-import net.minecraft.util.Hand;
+import net.minecraft.util.*;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.math.ColorHelper;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class JewelryPillowEntity extends LivingEntity {
-    private static final float DEFAULT_PILLOW_ROTATION = 0.0f;
     public static final TrackedData<Float> PILLOW_ROTATION_TRACKER = DataTracker.registerData(JewelryPillowEntity.class, TrackedDataHandlerRegistry.FLOAT);
+    private static final TrackedData<Byte> PILLOW_COLOR_TRACKER = DataTracker.registerData(JewelryPillowEntity.class, TrackedDataHandlerRegistry.BYTE);
     private static final Predicate<Entity> RIDEABLE_MINECART_PREDICATE = entity -> entity instanceof AbstractMinecartEntity && ((AbstractMinecartEntity)entity).getMinecartType() == AbstractMinecartEntity.Type.RIDEABLE;
-    private static final String DISPLAYED_ITEM_NBT_KEY = "displayed_item";
     private static final String PILLOW_ROTATION_NBT_KEY = "pillow_rotation";
+    private static final String DISPLAYED_ITEM_NBT_KEY = "displayed_item";
+    private static final String PILLOW_COLOR_NBT_KEY = "pillow_color";
+
+    private static final Map<DyeColor, ItemConvertible> DROPS;
+    private static final Map<DyeColor, Integer> COLORS;
 
     private ItemStack displayedItem = ItemStack.EMPTY;
-    private float pillowRotation = DEFAULT_PILLOW_ROTATION;
+    private float pillowRotation = 0f;
     public long lastHitTime;
+
+    static {
+        DROPS = new HashMap<>();
+        DROPS.put(DyeColor.WHITE, ModItems.WHITE_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.ORANGE, ModItems.ORANGE_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.MAGENTA, ModItems.MAGENTA_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.LIGHT_BLUE, ModItems.LIGHT_BLUE_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.YELLOW, ModItems.YELLOW_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.LIME, ModItems.LIME_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.PINK, ModItems.PINK_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.GRAY, ModItems.GRAY_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.LIGHT_GRAY, ModItems.LIGHT_GRAY_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.CYAN, ModItems.CYAN_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.PURPLE, ModItems.PURPLE_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.BLUE, ModItems.BLUE_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.BROWN, ModItems.BROWN_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.GREEN, ModItems.GREEN_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.RED, ModItems.RED_JEWELRY_PILLOW);
+        DROPS.put(DyeColor.BLACK, ModItems.BLACK_JEWELRY_PILLOW);
+
+
+        COLORS = Arrays.stream(DyeColor.values()).collect(Collectors.toMap((color) -> color, JewelryPillowEntity::getDyedColor));
+    }
+
+    public static int getRgbColor(DyeColor dyeColor) {
+        return COLORS.get(dyeColor);
+    }
+    private static int getDyedColor(DyeColor color) {
+        if (color == DyeColor.WHITE) {
+            return -1644826;
+        } else {
+            int i = color.getEntityColor();
+            float f = 0.75F;
+            return ColorHelper.Argb.getArgb(255, MathHelper.floor((float) ColorHelper.Argb.getRed(i) * f), MathHelper.floor((float) ColorHelper.Argb.getGreen(i) * f), MathHelper.floor((float) ColorHelper.Argb.getBlue(i) * f));
+        }
+    }
 
     public JewelryPillowEntity(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
@@ -49,7 +98,8 @@ public class JewelryPillowEntity extends LivingEntity {
     @Override
     protected void initDataTracker(DataTracker.Builder builder) {
         super.initDataTracker(builder);
-        builder.add(PILLOW_ROTATION_TRACKER, DEFAULT_PILLOW_ROTATION);
+        builder.add(PILLOW_ROTATION_TRACKER, 0f);
+        builder.add(PILLOW_COLOR_TRACKER, (byte) 0);
     }
 
     @Override
@@ -88,6 +138,15 @@ public class JewelryPillowEntity extends LivingEntity {
 
         if (player.getWorld().isClient) {
             return ActionResult.CONSUME;
+        }
+
+        if (itemStack.getItem() instanceof DyeItem dye) {
+            this.setColor(dye.getColor());
+            if (!player.getAbilities().creativeMode) {
+                itemStack.decrement(1);
+            }
+
+            return ActionResult.SUCCESS;
         }
 
         if (tryDisplayItem(player, itemStack, hand)) {
@@ -130,27 +189,40 @@ public class JewelryPillowEntity extends LivingEntity {
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
 
+        nbt.putFloat(PILLOW_ROTATION_NBT_KEY, pillowRotation);
+
         if (!displayedItem.isEmpty()) {
             nbt.put(DISPLAYED_ITEM_NBT_KEY, displayedItem.encodeAllowEmpty(this.getRegistryManager()));
         }
 
-        if (pillowRotation != DEFAULT_PILLOW_ROTATION) {
-            nbt.putFloat(PILLOW_ROTATION_NBT_KEY, pillowRotation);
-        }
+        nbt.putByte(PILLOW_COLOR_NBT_KEY, (byte) this.getColor().getId());
     }
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
 
+        if (nbt.contains(PILLOW_ROTATION_NBT_KEY)) {
+            setPillowRotation(nbt.getFloat(PILLOW_ROTATION_NBT_KEY));
+        }
+
         if (nbt.contains(DISPLAYED_ITEM_NBT_KEY)) {
             NbtCompound heldItemNbt = nbt.getCompound(DISPLAYED_ITEM_NBT_KEY);
             displayedItem = ItemStack.fromNbtOrEmpty(this.getRegistryManager(), heldItemNbt);
         }
 
-        if (nbt.contains(PILLOW_ROTATION_NBT_KEY)) {
-            setPillowRotation(nbt.getFloat(PILLOW_ROTATION_NBT_KEY));
+        if (nbt.contains(PILLOW_COLOR_NBT_KEY)) {
+            this.setColor(DyeColor.byId(nbt.getByte(PILLOW_COLOR_NBT_KEY)));
         }
+    }
+
+    public DyeColor getColor() {
+        return DyeColor.byId(this.dataTracker.get(PILLOW_COLOR_TRACKER) & 15);
+    }
+
+    public void setColor(DyeColor color) {
+        byte b = this.dataTracker.get(PILLOW_COLOR_TRACKER);
+        this.dataTracker.set(PILLOW_COLOR_TRACKER, (byte)(b & 240 | color.getId() & 15));
     }
 
     @Override
@@ -316,7 +388,7 @@ public class JewelryPillowEntity extends LivingEntity {
 
     private void spawnBreakParticles() {
         if (getWorld() instanceof ServerWorld serverWorld) {
-            BlockStateParticleEffect particles = new BlockStateParticleEffect(ParticleTypes.BLOCK, Blocks.RED_WOOL.getDefaultState());
+            BlockStateParticleEffect particles = new BlockStateParticleEffect(ParticleTypes.BLOCK, Blocks.OAK_WOOD.getDefaultState());
             serverWorld.spawnParticles(particles, getX(), getBodyY(0.6666666666666666), getZ(), 10, getWidth() / 4.0f, getHeight() / 4.0f, getWidth() / 4.0f, 0.05);
         }
     }
@@ -333,7 +405,7 @@ public class JewelryPillowEntity extends LivingEntity {
     }
 
     private void breakAndDropItem(ServerWorld world, DamageSource damageSource) {
-        ItemStack itemStack = new ItemStack(ModItems.JEWELRY_PILLOW);
+        ItemStack itemStack = new ItemStack(DROPS.get(this.getColor()));
         Block.dropStack(getWorld(), getBlockPos(), itemStack);
         onBreak(world, damageSource);
     }
@@ -400,6 +472,6 @@ public class JewelryPillowEntity extends LivingEntity {
 
     @Override
     public ItemStack getPickBlockStack() {
-        return new ItemStack(ModItems.JEWELRY_PILLOW);
+        return new ItemStack(DROPS.get(this.getColor()));
     }
 }

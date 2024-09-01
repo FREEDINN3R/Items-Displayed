@@ -21,7 +21,22 @@ public class ModItemGroups {
                         .icon(() -> new ItemStack(ModItems.ITEM_DISPLAY))
                         .entries((displayContext, entries) -> {
                             entries.add(ModItems.ITEM_DISPLAY);
-                            entries.add(ModItems.JEWELRY_PILLOW);
+                            entries.add(ModItems.WHITE_JEWELRY_PILLOW);
+                            entries.add(ModItems.LIGHT_GRAY_JEWELRY_PILLOW);
+                            entries.add(ModItems.GRAY_JEWELRY_PILLOW);
+                            entries.add(ModItems.BLACK_JEWELRY_PILLOW);
+                            entries.add(ModItems.BROWN_JEWELRY_PILLOW);
+                            entries.add(ModItems.RED_JEWELRY_PILLOW);
+                            entries.add(ModItems.ORANGE_JEWELRY_PILLOW);
+                            entries.add(ModItems.YELLOW_JEWELRY_PILLOW);
+                            entries.add(ModItems.LIME_JEWELRY_PILLOW);
+                            entries.add(ModItems.GREEN_JEWELRY_PILLOW);
+                            entries.add(ModItems.LIGHT_BLUE_JEWELRY_PILLOW);
+                            entries.add(ModItems.CYAN_JEWELRY_PILLOW);
+                            entries.add(ModItems.BLUE_JEWELRY_PILLOW);
+                            entries.add(ModItems.PURPLE_JEWELRY_PILLOW);
+                            entries.add(ModItems.MAGENTA_JEWELRY_PILLOW);
+                            entries.add(ModItems.PINK_JEWELRY_PILLOW);
 
                             entries.add(Items.ANGLER_POTTERY_SHERD);
                             entries.add(Items.ARCHER_POTTERY_SHERD);

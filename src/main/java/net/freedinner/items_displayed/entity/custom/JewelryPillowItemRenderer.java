@@ -16,10 +16,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Arm;
 import net.minecraft.util.math.RotationAxis;
 
-public class JewelryPillowFeatureRenderer extends FeatureRenderer<JewelryPillowEntity, JewelryPillowEntityModel> {
+public class JewelryPillowItemRenderer extends FeatureRenderer<JewelryPillowEntity, JewelryPillowEntityModel> {
     private final HeldItemRenderer heldItemRenderer;
 
-    public JewelryPillowFeatureRenderer(FeatureRendererContext<JewelryPillowEntity, JewelryPillowEntityModel> context, HeldItemRenderer heldItemRenderer) {
+    public JewelryPillowItemRenderer(FeatureRendererContext<JewelryPillowEntity, JewelryPillowEntityModel> context, HeldItemRenderer heldItemRenderer) {
         super(context);
         this.heldItemRenderer = heldItemRenderer;
     }

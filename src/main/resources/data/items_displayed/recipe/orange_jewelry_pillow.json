@@ -13,11 +13,11 @@
       "item": "minecraft:stick"
     },
     "w": {
-      "item": "minecraft:red_wool"
+      "item": "minecraft:orange_wool"
     }
   },
   "result": {
     "count": 1,
-    "id": "items_displayed:jewelry_pillow"
+    "id": "items_displayed:orange_jewelry_pillow"
   }
 }

@@ -16,10 +16,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Arm;
 import net.minecraft.util.math.RotationAxis;
 
-public class ItemDisplayFeatureRenderer extends FeatureRenderer<ItemDisplayEntity, ItemDisplayEntityModel> {
+public class ItemDisplayItemRenderer extends FeatureRenderer<ItemDisplayEntity, ItemDisplayEntityModel> {
     private final HeldItemRenderer heldItemRenderer;
     
-    public ItemDisplayFeatureRenderer(FeatureRendererContext<ItemDisplayEntity, ItemDisplayEntityModel> context, HeldItemRenderer heldItemRenderer) {
+    public ItemDisplayItemRenderer(FeatureRendererContext<ItemDisplayEntity, ItemDisplayEntityModel> context, HeldItemRenderer heldItemRenderer) {
         super(context);
         this.heldItemRenderer = heldItemRenderer;
     }

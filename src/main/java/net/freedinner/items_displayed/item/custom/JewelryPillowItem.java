@@ -16,6 +16,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
@@ -25,8 +26,11 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class JewelryPillowItem extends Item {
-    public JewelryPillowItem(Settings settings) {
+    private final DyeColor color;
+
+    public JewelryPillowItem(Settings settings, DyeColor color) {
         super(settings);
+        this.color = color;
     }
 
     @Override
@@ -68,6 +72,7 @@ public class JewelryPillowItem extends Item {
             }
 
             setJewelryPillowRotation(jewelryPillowEntity, context);
+            jewelryPillowEntity.setColor(color);
             summonJewelryPillow(serverWorld, jewelryPillowEntity, context.getPlayer());
         }
 

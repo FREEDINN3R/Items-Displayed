@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " * ",
+    "/w/"
+  ],
+  "key": {
+    "*": {
+      "item": "minecraft:gold_nugget"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "w": {
+      "item": "minecraft:light_gray_wool"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "items_displayed:light_gray_jewelry_pillow"
+  }
+}
