@@ -1,63 +1,63 @@
 {
   "variants": {
     "gemstones=1,facing=north": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_1"
+      "model": "items_displayed:block/crystal/amethyst_shard_1"
     },
     "gemstones=1,facing=south": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_1",
+      "model": "items_displayed:block/crystal/amethyst_shard_1",
       "y": 180
     },
     "gemstones=1,facing=west": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_1",
+      "model": "items_displayed:block/crystal/amethyst_shard_1",
       "y": 270
     },
     "gemstones=1,facing=east": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_1",
+      "model": "items_displayed:block/crystal/amethyst_shard_1",
       "y": 90
     },
     "gemstones=2,facing=north": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_2"
+      "model": "items_displayed:block/crystal/amethyst_shard_2"
     },
     "gemstones=2,facing=south": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_2",
+      "model": "items_displayed:block/crystal/amethyst_shard_2",
       "y": 180
     },
     "gemstones=2,facing=west": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_2",
+      "model": "items_displayed:block/crystal/amethyst_shard_2",
       "y": 270
     },
     "gemstones=2,facing=east": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_2",
+      "model": "items_displayed:block/crystal/amethyst_shard_2",
       "y": 90
     },
     "gemstones=3,facing=north": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_3"
+      "model": "items_displayed:block/crystal/amethyst_shard_3"
     },
     "gemstones=3,facing=south": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_3",
+      "model": "items_displayed:block/crystal/amethyst_shard_3",
       "y": 180
     },
     "gemstones=3,facing=west": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_3",
+      "model": "items_displayed:block/crystal/amethyst_shard_3",
       "y": 270
     },
     "gemstones=3,facing=east": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_3",
+      "model": "items_displayed:block/crystal/amethyst_shard_3",
       "y": 90
     },
     "gemstones=4,facing=north": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_4"
+      "model": "items_displayed:block/crystal/amethyst_shard_4"
     },
     "gemstones=4,facing=south": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_4",
+      "model": "items_displayed:block/crystal/amethyst_shard_4",
       "y": 180
     },
     "gemstones=4,facing=west": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_4",
+      "model": "items_displayed:block/crystal/amethyst_shard_4",
       "y": 270
     },
     "gemstones=4,facing=east": {
-      "model": "items_displayed:block/gemstone/amethyst_shard_4",
+      "model": "items_displayed:block/crystal/amethyst_shard_4",
       "y": 90
     }
   }
