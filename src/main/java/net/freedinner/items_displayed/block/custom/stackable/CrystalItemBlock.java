@@ -12,7 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 
-public class AmethystShardItemBlock extends AbstractStackableItemBlock {
+public class CrystalItemBlock extends AbstractStackableItemBlock {
     public static final VoxelShape NORTH_SOUTH_SHAPE_1 =
             Block.createCuboidShape(5.0, 0.0, 4.0, 11.0, 3.0, 12.0);
     public static final VoxelShape EAST_WEST_SHAPE_1 =
@@ -30,9 +30,9 @@ public class AmethystShardItemBlock extends AbstractStackableItemBlock {
     public static final VoxelShape EAST_WEST_SHAPE_4 =
             Block.createCuboidShape(1.5, 0.0, 3.0, 14.5, 6.0, 13.0);
 
-    private static final MapCodec<? extends HorizontalFacingBlock> CODEC = AbstractItemBlock.createCodec(AmethystShardItemBlock::new);
+    private static final MapCodec<? extends HorizontalFacingBlock> CODEC = AbstractItemBlock.createCodec(CrystalItemBlock::new);
 
-    public AmethystShardItemBlock(Settings settings) {
+    public CrystalItemBlock(Settings settings) {
         super(settings);
     }
 

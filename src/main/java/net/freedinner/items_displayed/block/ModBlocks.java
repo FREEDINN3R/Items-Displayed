@@ -1,7 +1,7 @@
 package net.freedinner.items_displayed.block;
 
 import net.freedinner.items_displayed.ItemsDisplayed;
-import net.freedinner.items_displayed.block.custom.stackable.AmethystShardItemBlock;
+import net.freedinner.items_displayed.block.custom.stackable.CrystalItemBlock;
 import net.freedinner.items_displayed.block.custom.stackable.DiamondItemBlock;
 import net.freedinner.items_displayed.block.custom.stackable.EmeraldItemBlock;
 import net.freedinner.items_displayed.block.custom.stackable.LapisLazuliItemBlock;
@@ -117,13 +117,13 @@ public class ModBlocks {
     public static final Block LAPIS_LAZULI = registerBlock("lapis_lazuli",
             new LapisLazuliItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.LAPIS_BLUE)));
     public static final Block AMETHYST_SHARD = registerBlock("amethyst_shard",
-            new AmethystShardItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.PURPLE)));
+            new CrystalItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.PURPLE)));
     public static final Block DIAMOND = registerBlock("diamond",
             new DiamondItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.DIAMOND_BLUE)));
     public static final Block EMERALD = registerBlock("emerald",
             new EmeraldItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.EMERALD_GREEN)));
     public static final Block ECHO_SHARD = registerBlock("echo_shard",
-            new AmethystShardItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.BLACK).sounds(BlockSoundGroup.SCULK_SHRIEKER)));
+            new CrystalItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.BLACK).sounds(BlockSoundGroup.SCULK_SHRIEKER)));
 
     private static Block registerBlock(String name, Block block) {
         Block registeredBlock = Registry.register(Registries.BLOCK, ItemsDisplayed.id(name), block);

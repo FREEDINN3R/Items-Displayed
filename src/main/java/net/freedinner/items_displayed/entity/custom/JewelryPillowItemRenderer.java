@@ -1,6 +1,5 @@
 package net.freedinner.items_displayed.entity.custom;
 
-import net.freedinner.items_displayed.item.ModTags;
 import net.freedinner.items_displayed.util.BlockItemMapper;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -42,12 +41,7 @@ public class JewelryPillowItemRenderer extends FeatureRenderer<JewelryPillowEnti
         matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-157.5f));
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f));
 
-        if (itemStack.isIn(ModTags.GEMSTONE_SHAPED)) {
-            matrices.translate(0f, -0.62f, -0.51f);
-        }
-        else if (itemStack.isIn(ModTags.CRYSTAL_SHAPED)) {
-            matrices.translate(0f, -0.62f, -0.51f);
-        }
+        matrices.translate(0f, -0.62f, -0.51f);
 
         Block block = BlockItemMapper.getBlockOrNull(itemStack.getItem(), true);
         ItemStack blockItemStack = new ItemStack(block == null ? Blocks.AIR : block.asItem());
