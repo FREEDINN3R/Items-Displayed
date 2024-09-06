@@ -12,4 +12,6 @@
   "item.items_displayed.tooltip.item_display_2": " - Smithing templates",
   
   "item.items_displayed.tooltip.debug": "You shouldn't be able to have this item..."
+
+  "entity.items_displayed.item_display": "Item Display"
 }
