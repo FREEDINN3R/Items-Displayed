@@ -1,6 +1,7 @@
 package net.freedinner.items_displayed.util;
 
 import net.freedinner.items_displayed.block.custom.ArmorTrimBlock;
+import net.freedinner.items_displayed.block.custom.MusicDiskBlock;
 import net.freedinner.items_displayed.block.custom.NetheriteUpgradeBlock;
 import net.freedinner.items_displayed.block.custom.SherdBlock;
 import net.freedinner.items_displayed.block.custom.stackable.IngotBlock;
@@ -35,6 +36,12 @@ public class ModTemplates {
         return new IngotBlock(defaultSettings()
                 .mapColor(mapColor)
                 .sounds(soundGroup));
+    }
+
+    public static Block defaultDiscBlock() {
+        return new MusicDiskBlock(defaultSettings()
+                .mapColor(MapColor.BLACK)
+                .sounds(BlockSoundGroup.DECORATED_POT));
     }
 
     public static AbstractBlock.Settings defaultGemstoneSettings(MapColor mapColor) {

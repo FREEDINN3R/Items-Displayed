@@ -1,6 +1,7 @@
 package net.freedinner.items_displayed.block;
 
 import net.freedinner.items_displayed.ItemsDisplayed;
+import net.freedinner.items_displayed.block.custom.MusicDiskBlock;
 import net.freedinner.items_displayed.block.custom.stackable.CrystalItemBlock;
 import net.freedinner.items_displayed.block.custom.stackable.DiamondItemBlock;
 import net.freedinner.items_displayed.block.custom.stackable.EmeraldItemBlock;
@@ -124,6 +125,9 @@ public class ModBlocks {
             new EmeraldItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.EMERALD_GREEN)));
     public static final Block ECHO_SHARD = registerBlock("echo_shard",
             new CrystalItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.BLACK).sounds(BlockSoundGroup.SCULK_SHRIEKER)));
+
+    public static final Block MUSIC_DISC_CAT = registerBlock("music_disc_cat",
+            ModTemplates.defaultDiscBlock());
 
     private static Block registerBlock(String name, Block block) {
         Block registeredBlock = Registry.register(Registries.BLOCK, ItemsDisplayed.id(name), block);
