@@ -41,7 +41,7 @@ public class ModTemplates {
     public static Block defaultDiscBlock() {
         return new MusicDiskBlock(defaultSettings()
                 .mapColor(MapColor.BLACK)
-                .sounds(BlockSoundGroup.DECORATED_POT));
+                .sounds(BlockSoundGroup.BAMBOO_WOOD));
     }
 
     public static AbstractBlock.Settings defaultGemstoneSettings(MapColor mapColor) {

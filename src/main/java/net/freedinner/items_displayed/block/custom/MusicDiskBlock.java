@@ -8,7 +8,7 @@ import net.minecraft.world.BlockView;
 
 public class MusicDiskBlock extends AbstractItemBlock implements Waterloggable {
     public static final VoxelShape SHAPE =
-            Block.createCuboidShape(0.5, 0, 0.5, 15.5, 2, 15.5);
+            Block.createCuboidShape(2, 0, 2, 14, 1, 14);
 
     private static final MapCodec<? extends HorizontalFacingBlock> CODEC = AbstractItemBlock.createCodec(MusicDiskBlock::new);
 
