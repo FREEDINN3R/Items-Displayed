@@ -20,6 +20,7 @@ public class ModItemGroups {
                         .displayName(Text.translatable("item.items_displayed.item_group_name"))
                         .icon(() -> new ItemStack(ModItems.ITEM_DISPLAY))
                         .entries((displayContext, entries) -> {
+                            // Custom items
                             entries.add(ModItems.ITEM_DISPLAY);
                             entries.add(ModItems.WHITE_JEWELRY_PILLOW);
                             entries.add(ModItems.LIGHT_GRAY_JEWELRY_PILLOW);
@@ -38,6 +39,24 @@ public class ModItemGroups {
                             entries.add(ModItems.MAGENTA_JEWELRY_PILLOW);
                             entries.add(ModItems.PINK_JEWELRY_PILLOW);
 
+                            // Gems & crystals
+                            entries.add(Items.COAL);
+                            entries.add(Items.CHARCOAL);
+                            entries.add(Items.LAPIS_LAZULI);
+                            entries.add(Items.AMETHYST_SHARD);
+                            entries.add(Items.DIAMOND);
+                            entries.add(Items.EMERALD);
+                            entries.add(Items.ECHO_SHARD);
+
+                            // Ingots & bricks
+                            entries.add(Items.BRICK);
+                            entries.add(Items.NETHER_BRICK);
+                            entries.add(Items.IRON_INGOT);
+                            entries.add(Items.COPPER_INGOT);
+                            entries.add(Items.GOLD_INGOT);
+                            entries.add(Items.NETHERITE_INGOT);
+
+                            // Sherds
                             entries.add(Items.ANGLER_POTTERY_SHERD);
                             entries.add(Items.ARCHER_POTTERY_SHERD);
                             entries.add(Items.ARMS_UP_POTTERY_SHERD);
@@ -62,6 +81,7 @@ public class ModItemGroups {
                             entries.add(Items.SKULL_POTTERY_SHERD);
                             entries.add(Items.SNORT_POTTERY_SHERD);
 
+                            // Templates
                             entries.add(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE);
                             entries.add(Items.SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE);
                             entries.add(Items.VEX_ARMOR_TRIM_SMITHING_TEMPLATE);
@@ -82,18 +102,27 @@ public class ModItemGroups {
                             entries.add(Items.FLOW_ARMOR_TRIM_SMITHING_TEMPLATE);
                             entries.add(Items.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE);
 
-                            entries.add(Items.BRICK);
-                            entries.add(Items.NETHER_BRICK);
-                            entries.add(Items.IRON_INGOT);
-                            entries.add(Items.COPPER_INGOT);
-                            entries.add(Items.GOLD_INGOT);
-                            entries.add(Items.NETHERITE_INGOT);
-
-                            entries.add(Items.LAPIS_LAZULI);
-                            entries.add(Items.AMETHYST_SHARD);
-                            entries.add(Items.DIAMOND);
-                            entries.add(Items.EMERALD);
-                            entries.add(Items.ECHO_SHARD);
+                            // Discs
+                            entries.add(Items.MUSIC_DISC_13);
+                            entries.add(Items.MUSIC_DISC_CAT);
+                            entries.add(Items.MUSIC_DISC_BLOCKS);
+                            entries.add(Items.MUSIC_DISC_CHIRP);
+                            entries.add(Items.MUSIC_DISC_FAR);
+                            entries.add(Items.MUSIC_DISC_MALL);
+                            entries.add(Items.MUSIC_DISC_MELLOHI);
+                            entries.add(Items.MUSIC_DISC_STAL);
+                            entries.add(Items.MUSIC_DISC_STRAD);
+                            entries.add(Items.MUSIC_DISC_WARD);
+                            entries.add(Items.MUSIC_DISC_11);
+                            entries.add(Items.MUSIC_DISC_CREATOR_MUSIC_BOX);
+                            entries.add(Items.MUSIC_DISC_WAIT);
+                            entries.add(Items.MUSIC_DISC_CREATOR);
+                            entries.add(Items.MUSIC_DISC_PRECIPICE);
+                            entries.add(Items.MUSIC_DISC_OTHERSIDE);
+                            entries.add(Items.MUSIC_DISC_RELIC);
+                            entries.add(Items.MUSIC_DISC_5);
+                            entries.add(Items.MUSIC_DISC_PIGSTEP);
+                            entries.add(Items.DISC_FRAGMENT_5);
                         })
                         .build()
         );
