@@ -1,0 +1,128 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "items_displayed:disc_fragment_5",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "fragments": "2"
+                  }
+                }
+              ],
+              "count": 2.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "items_displayed:disc_fragment_5",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "fragments": "3"
+                  }
+                }
+              ],
+              "count": 3.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "items_displayed:disc_fragment_5",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "fragments": "4"
+                  }
+                }
+              ],
+              "count": 4.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "items_displayed:disc_fragment_5",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "fragments": "5"
+                  }
+                }
+              ],
+              "count": 5.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "items_displayed:disc_fragment_5",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "fragments": "6"
+                  }
+                }
+              ],
+              "count": 6.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "items_displayed:disc_fragment_5",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "fragments": "7"
+                  }
+                }
+              ],
+              "count": 7.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "items_displayed:disc_fragment_5",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "fragments": "8"
+                  }
+                }
+              ],
+              "count": 8.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "items_displayed:disc_fragment_5",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "fragments": "9"
+                  }
+                }
+              ],
+              "count": 9.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:disc_fragment_5"
+        }
+      ]
+    }
+  ]
+}

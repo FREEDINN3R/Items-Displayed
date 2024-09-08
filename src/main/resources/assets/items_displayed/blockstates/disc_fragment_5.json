@@ -1,0 +1,139 @@
+{
+  "variants": {
+    "fragments=1,facing=north": {
+      "model": "items_displayed:block/disc/disc_fragment_5_1"
+    },
+    "fragments=1,facing=south": {
+      "model": "items_displayed:block/disc/disc_fragment_5_1",
+      "y": 180
+    },
+    "fragments=1,facing=west": {
+      "model": "items_displayed:block/disc/disc_fragment_5_1",
+      "y": 270
+    },
+    "fragments=1,facing=east": {
+      "model": "items_displayed:block/disc/disc_fragment_5_1",
+      "y": 90
+    },
+    "fragments=2,facing=north": {
+      "model": "items_displayed:block/disc/disc_fragment_5_2"
+    },
+    "fragments=2,facing=south": {
+      "model": "items_displayed:block/disc/disc_fragment_5_2",
+      "y": 180
+    },
+    "fragments=2,facing=west": {
+      "model": "items_displayed:block/disc/disc_fragment_5_2",
+      "y": 270
+    },
+    "fragments=2,facing=east": {
+      "model": "items_displayed:block/disc/disc_fragment_5_2",
+      "y": 90
+    },
+    "fragments=3,facing=north": {
+      "model": "items_displayed:block/disc/disc_fragment_5_3"
+    },
+    "fragments=3,facing=south": {
+      "model": "items_displayed:block/disc/disc_fragment_5_3",
+      "y": 180
+    },
+    "fragments=3,facing=west": {
+      "model": "items_displayed:block/disc/disc_fragment_5_3",
+      "y": 270
+    },
+    "fragments=3,facing=east": {
+      "model": "items_displayed:block/disc/disc_fragment_5_3",
+      "y": 90
+    },
+    "fragments=4,facing=north": {
+      "model": "items_displayed:block/disc/disc_fragment_5_4"
+    },
+    "fragments=4,facing=south": {
+      "model": "items_displayed:block/disc/disc_fragment_5_4",
+      "y": 180
+    },
+    "fragments=4,facing=west": {
+      "model": "items_displayed:block/disc/disc_fragment_5_4",
+      "y": 270
+    },
+    "fragments=4,facing=east": {
+      "model": "items_displayed:block/disc/disc_fragment_5_4",
+      "y": 90
+    },
+    "fragments=5,facing=north": {
+      "model": "items_displayed:block/disc/disc_fragment_5_5"
+    },
+    "fragments=5,facing=south": {
+      "model": "items_displayed:block/disc/disc_fragment_5_5",
+      "y": 180
+    },
+    "fragments=5,facing=west": {
+      "model": "items_displayed:block/disc/disc_fragment_5_5",
+      "y": 270
+    },
+    "fragments=5,facing=east": {
+      "model": "items_displayed:block/disc/disc_fragment_5_5",
+      "y": 90
+    },
+    "fragments=6,facing=north": {
+      "model": "items_displayed:block/disc/disc_fragment_5_6"
+    },
+    "fragments=6,facing=south": {
+      "model": "items_displayed:block/disc/disc_fragment_5_6",
+      "y": 180
+    },
+    "fragments=6,facing=west": {
+      "model": "items_displayed:block/disc/disc_fragment_5_6",
+      "y": 270
+    },
+    "fragments=6,facing=east": {
+      "model": "items_displayed:block/disc/disc_fragment_5_6",
+      "y": 90
+    },
+    "fragments=7,facing=north": {
+      "model": "items_displayed:block/disc/disc_fragment_5_7"
+    },
+    "fragments=7,facing=south": {
+      "model": "items_displayed:block/disc/disc_fragment_5_7",
+      "y": 180
+    },
+    "fragments=7,facing=west": {
+      "model": "items_displayed:block/disc/disc_fragment_5_7",
+      "y": 270
+    },
+    "fragments=7,facing=east": {
+      "model": "items_displayed:block/disc/disc_fragment_5_7",
+      "y": 90
+    },
+    "fragments=8,facing=north": {
+      "model": "items_displayed:block/disc/disc_fragment_5_8"
+    },
+    "fragments=8,facing=south": {
+      "model": "items_displayed:block/disc/disc_fragment_5_8",
+      "y": 180
+    },
+    "fragments=8,facing=west": {
+      "model": "items_displayed:block/disc/disc_fragment_5_8",
+      "y": 270
+    },
+    "fragments=8,facing=east": {
+      "model": "items_displayed:block/disc/disc_fragment_5_8",
+      "y": 90
+    },
+    "fragments=9,facing=north": {
+      "model": "items_displayed:block/disc/disc_fragment_5_9"
+    },
+    "fragments=9,facing=south": {
+      "model": "items_displayed:block/disc/disc_fragment_5_9",
+      "y": 180
+    },
+    "fragments=9,facing=west": {
+      "model": "items_displayed:block/disc/disc_fragment_5_9",
+      "y": 270
+    },
+    "fragments=9,facing=east": {
+      "model": "items_displayed:block/disc/disc_fragment_5_9",
+      "y": 90
+    }
+  }
+}

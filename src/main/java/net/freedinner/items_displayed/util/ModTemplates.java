@@ -4,7 +4,8 @@ import net.freedinner.items_displayed.block.custom.ArmorTrimBlock;
 import net.freedinner.items_displayed.block.custom.MusicDiskBlock;
 import net.freedinner.items_displayed.block.custom.NetheriteUpgradeBlock;
 import net.freedinner.items_displayed.block.custom.SherdBlock;
-import net.freedinner.items_displayed.block.custom.stackable.IngotBlock;
+import net.freedinner.items_displayed.block.custom.stackable.DiscFragmentItemBlock;
+import net.freedinner.items_displayed.block.custom.stackable.IngotItemBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
@@ -33,7 +34,7 @@ public class ModTemplates {
     public static Block defaultIngotBlock(MapColor mapColor, boolean metal) {
         BlockSoundGroup soundGroup = metal ? BlockSoundGroup.NETHERITE : BlockSoundGroup.STONE;
 
-        return new IngotBlock(defaultSettings()
+        return new IngotItemBlock(defaultSettings()
                 .mapColor(mapColor)
                 .sounds(soundGroup));
     }
@@ -42,6 +43,12 @@ public class ModTemplates {
         return new MusicDiskBlock(defaultSettings()
                 .mapColor(MapColor.BLACK)
                 .sounds(soundGroup));
+    }
+
+    public static Block defaultDiscFragmentBlock() {
+        return new DiscFragmentItemBlock(defaultSettings()
+                .mapColor(MapColor.BLACK)
+                .sounds(BlockSoundGroup.BAMBOO_WOOD));
     }
 
     public static AbstractBlock.Settings defaultGemstoneSettings(MapColor mapColor) {

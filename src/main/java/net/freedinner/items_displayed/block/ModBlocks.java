@@ -2,10 +2,7 @@ package net.freedinner.items_displayed.block;
 
 import net.freedinner.items_displayed.ItemsDisplayed;
 import net.freedinner.items_displayed.block.custom.MusicDiskBlock;
-import net.freedinner.items_displayed.block.custom.stackable.CrystalItemBlock;
-import net.freedinner.items_displayed.block.custom.stackable.DiamondItemBlock;
-import net.freedinner.items_displayed.block.custom.stackable.EmeraldItemBlock;
-import net.freedinner.items_displayed.block.custom.stackable.LapisLazuliItemBlock;
+import net.freedinner.items_displayed.block.custom.stackable.*;
 import net.freedinner.items_displayed.item.custom.DebugBlockItem;
 import net.freedinner.items_displayed.util.ModTemplates;
 import net.minecraft.block.Block;
@@ -164,6 +161,8 @@ public class ModBlocks {
             ModTemplates.defaultDiscBlock(BlockSoundGroup.COPPER));
     public static final Block MUSIC_DISC_PRECIPICE = registerBlock("music_disc_precipice",
             ModTemplates.defaultDiscBlock(BlockSoundGroup.STONE));
+    public static final Block DISC_FRAGMENT_5 = registerBlock("disc_fragment_5",
+            ModTemplates.defaultDiscFragmentBlock());
 
     private static Block registerBlock(String name, Block block) {
         Block registeredBlock = Registry.register(Registries.BLOCK, ItemsDisplayed.id(name), block);
