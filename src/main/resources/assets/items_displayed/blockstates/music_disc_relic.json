@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "items_displayed:block/disc/music_disc_relic"
+    },
+    "facing=south": {
+      "model": "items_displayed:block/disc/music_disc_relic",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "items_displayed:block/disc/music_disc_relic",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "items_displayed:block/disc/music_disc_relic",
+      "y": 90
+    }
+  }
+}

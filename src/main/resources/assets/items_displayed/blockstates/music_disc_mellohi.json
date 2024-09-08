@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "items_displayed:block/disc/music_disc_mellohi"
+    },
+    "facing=south": {
+      "model": "items_displayed:block/disc/music_disc_mellohi",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "items_displayed:block/disc/music_disc_mellohi",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "items_displayed:block/disc/music_disc_mellohi",
+      "y": 90
+    }
+  }
+}

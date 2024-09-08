@@ -126,8 +126,42 @@ public class ModBlocks {
     public static final Block ECHO_SHARD = registerBlock("echo_shard",
             new CrystalItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.BLACK).sounds(BlockSoundGroup.SCULK_SHRIEKER)));
 
+    public static final Block MUSIC_DISC_13 = registerBlock("music_disc_13",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
     public static final Block MUSIC_DISC_CAT = registerBlock("music_disc_cat",
-            ModTemplates.defaultDiscBlock());
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_BLOCKS = registerBlock("music_disc_blocks",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_CHIRP = registerBlock("music_disc_chirp",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_FAR = registerBlock("music_disc_far",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_MALL = registerBlock("music_disc_mall",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_MELLOHI = registerBlock("music_disc_mellohi",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_STAL = registerBlock("music_disc_stal",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_STRAD = registerBlock("music_disc_strad",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_WARD = registerBlock("music_disc_ward",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_WAIT = registerBlock("music_disc_wait",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_PIGSTEP = registerBlock("music_disc_pigstep",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_OTHERSIDE = registerBlock("music_disc_otherside",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_5 = registerBlock("music_disc_5",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_RELIC = registerBlock("music_disc_relic",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.DECORATED_POT));
+    public static final Block MUSIC_DISC_CREATOR = registerBlock("music_disc_creator",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.COPPER));
+    public static final Block MUSIC_DISC_CREATOR_MUSIC_BOX = registerBlock("music_disc_creator_music_box",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.COPPER));
+    public static final Block MUSIC_DISC_PRECIPICE = registerBlock("music_disc_precipice",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.STONE));
 
     private static Block registerBlock(String name, Block block) {
         Block registeredBlock = Registry.register(Registries.BLOCK, ItemsDisplayed.id(name), block);

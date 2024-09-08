@@ -48,6 +48,9 @@ public class ItemDisplayItemRenderer extends FeatureRenderer<ItemDisplayEntity, 
         else if (itemStack.isIn(ModTags.TEMPLATE_SHAPED)) {
             matrices.translate(0f, -0.11f, -1.01f);
         }
+        else if (itemStack.isIn(ModTags.DISC_SHAPED)) {
+            matrices.translate(0f, -0.11f, -1.01f);
+        }
 
         Block block = BlockItemMapper.getBlockOrNull(itemStack.getItem(), true);
         ItemStack blockItemStack = new ItemStack(block == null ? Blocks.AIR : block.asItem());

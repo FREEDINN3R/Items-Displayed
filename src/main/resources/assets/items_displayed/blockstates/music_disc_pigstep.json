@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "items_displayed:block/disc/music_disc_pigstep"
+    },
+    "facing=south": {
+      "model": "items_displayed:block/disc/music_disc_pigstep",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "items_displayed:block/disc/music_disc_pigstep",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "items_displayed:block/disc/music_disc_pigstep",
+      "y": 90
+    }
+  }
+}

@@ -38,10 +38,10 @@ public class ModTemplates {
                 .sounds(soundGroup));
     }
 
-    public static Block defaultDiscBlock() {
+    public static Block defaultDiscBlock(BlockSoundGroup soundGroup) {
         return new MusicDiskBlock(defaultSettings()
                 .mapColor(MapColor.BLACK)
-                .sounds(BlockSoundGroup.BAMBOO_WOOD));
+                .sounds(soundGroup));
     }
 
     public static AbstractBlock.Settings defaultGemstoneSettings(MapColor mapColor) {
