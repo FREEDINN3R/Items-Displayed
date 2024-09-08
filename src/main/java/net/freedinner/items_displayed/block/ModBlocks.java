@@ -146,6 +146,8 @@ public class ModBlocks {
             ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
     public static final Block MUSIC_DISC_WARD = registerBlock("music_disc_ward",
             ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
+    public static final Block MUSIC_DISC_11 = registerBlock("music_disc_11",
+            ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
     public static final Block MUSIC_DISC_WAIT = registerBlock("music_disc_wait",
             ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
     public static final Block MUSIC_DISC_PIGSTEP = registerBlock("music_disc_pigstep",
