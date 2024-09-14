@@ -23,6 +23,7 @@ import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.*;
@@ -136,17 +137,19 @@ public class JewelryPillowEntity extends LivingEntity {
             return ActionResult.SUCCESS;
         }
 
-        if (player.getWorld().isClient) {
-            return ActionResult.CONSUME;
-        }
+        if (itemStack.getItem() instanceof DyeItem dye && this.getColor() != dye.getColor()) {
+            this.getWorld().playSoundFromEntity(player, this, SoundEvents.ITEM_DYE_USE, SoundCategory.PLAYERS, 1.0f, 1.0f);
 
-        if (itemStack.getItem() instanceof DyeItem dye) {
-            this.setColor(dye.getColor());
-            if (!player.getAbilities().creativeMode) {
+            if (!this.getWorld().isClient) {
+                this.setColor(dye.getColor());
                 itemStack.decrement(1);
             }
 
             return ActionResult.SUCCESS;
+        }
+
+        if (player.getWorld().isClient) {
+            return ActionResult.CONSUME;
         }
 
         if (tryDisplayItem(player, itemStack, hand)) {

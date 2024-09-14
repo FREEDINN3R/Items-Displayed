@@ -24,7 +24,7 @@ public class ModEntities {
             ItemsDisplayed.id( "jewelry_pillow"),
             EntityType.Builder
                     .create(JewelryPillowEntity::new, SpawnGroup.MISC)
-                    .dimensions(0.8f, 0.4f)
+                    .dimensions(0.75f, 0.4f)
                     .build()
     );
 
