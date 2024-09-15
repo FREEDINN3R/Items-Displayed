@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "minecraft:coal",
+    "minecraft:charcoal",
     "minecraft:lapis_lazuli",
     "minecraft:diamond",
     "minecraft:emerald"

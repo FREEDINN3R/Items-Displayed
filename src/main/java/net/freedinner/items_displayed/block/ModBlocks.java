@@ -112,6 +112,10 @@ public class ModBlocks {
     public static final Block NETHERITE_INGOT = registerBlock("netherite_ingot",
             ModTemplates.defaultIngotBlock(MapColor.BLACK, true));
 
+    public static final Block COAL = registerBlock("coal",
+            new DiamondItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.BLACK)));
+    public static final Block CHARCOAL = registerBlock("charcoal",
+            new DiamondItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.BLACK)));
     public static final Block LAPIS_LAZULI = registerBlock("lapis_lazuli",
             new LapisLazuliItemBlock(ModTemplates.defaultGemstoneSettings(MapColor.LAPIS_BLUE)));
     public static final Block AMETHYST_SHARD = registerBlock("amethyst_shard",
