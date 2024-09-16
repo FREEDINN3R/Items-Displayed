@@ -2,8 +2,8 @@ package net.freedinner.items_displayed.entity;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.freedinner.items_displayed.ItemsDisplayed;
-import net.freedinner.items_displayed.entity.custom.ItemDisplayEntity;
-import net.freedinner.items_displayed.entity.custom.JewelryPillowEntity;
+import net.freedinner.items_displayed.entity.custom.item_display.ItemDisplayEntity;
+import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;

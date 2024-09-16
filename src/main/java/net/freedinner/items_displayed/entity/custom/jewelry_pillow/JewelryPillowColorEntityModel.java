@@ -1,10 +1,7 @@
-package net.freedinner.items_displayed.entity.custom;
+package net.freedinner.items_displayed.entity.custom.jewelry_pillow;
 
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.entity.model.SheepWoolEntityModel;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
-import net.minecraft.client.util.math.MatrixStack;
 
 public class JewelryPillowColorEntityModel extends SinglePartEntityModel<JewelryPillowEntity> {
 	private final ModelPart bb_main;

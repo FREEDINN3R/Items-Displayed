@@ -1,9 +1,7 @@
 package net.freedinner.items_displayed.entity.custom;
 
 import net.freedinner.items_displayed.item.ModItems;
-import net.freedinner.items_displayed.item.ModTags;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
@@ -12,92 +10,49 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.particle.BlockStateParticleEffect;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Arm;
 import net.minecraft.util.Hand;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.function.Predicate;
 
-public class ItemDisplayEntity extends LivingEntity {
-    private static final float DEFAULT_DISPLAY_ROTATION = 0.0f;
-    public static final TrackedData<Float> DISPLAY_ROTATION_TRACKER = DataTracker.registerData(ItemDisplayEntity.class, TrackedDataHandlerRegistry.FLOAT);
-    private static final Predicate<Entity> RIDEABLE_MINECART_PREDICATE = entity -> entity instanceof AbstractMinecartEntity && ((AbstractMinecartEntity)entity).getMinecartType() == AbstractMinecartEntity.Type.RIDEABLE;
-    private static final String DISPLAYED_ITEM_NBT_KEY = "displayed_item";
-    private static final String DISPLAY_ROTATION_NBT_KEY = "display_rotation";
+public abstract class AbstractDisplayEntity extends LivingEntity {
+    protected static final float DEFAULT_ENTITY_ROTATION = 0.0f;
+    public static final TrackedData<Float> ENTITY_ROTATION_TRACKER = DataTracker.registerData(AbstractDisplayEntity.class, TrackedDataHandlerRegistry.FLOAT);
+    protected static final Predicate<Entity> RIDEABLE_MINECART_PREDICATE = entity -> entity instanceof AbstractMinecartEntity && ((AbstractMinecartEntity)entity).getMinecartType() == AbstractMinecartEntity.Type.RIDEABLE;
+    protected static final String DISPLAYED_ITEM_NBT_KEY = "displayed_item";
+    protected static final String ENTITY_ROTATION_NBT_KEY = "display_entity_rotation";
 
-    private ItemStack displayedItem = ItemStack.EMPTY;
-    private float displayRotation = DEFAULT_DISPLAY_ROTATION;
+    protected ItemStack displayedItem = ItemStack.EMPTY;
+    protected float entityRotation = DEFAULT_ENTITY_ROTATION;
     public long lastHitTime;
 
-    public ItemDisplayEntity(EntityType<? extends LivingEntity> entityType, World world) {
+    protected AbstractDisplayEntity(EntityType<? extends LivingEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-        super.initDataTracker(builder);
-        builder.add(DISPLAY_ROTATION_TRACKER, DEFAULT_DISPLAY_ROTATION);
-    }
 
-    @Override
-    public void tick() {
-        super.tick();
+    protected abstract Item getEntityItem();
 
-        float angle = dataTracker.get(DISPLAY_ROTATION_TRACKER);
-        if (displayRotation != angle) {
-            setDisplayRotation(angle);
-        }
-    }
+    protected abstract void spawnBreakParticles();
 
-    public void setDisplayRotation(float angle) {
-        displayRotation = angle;
-        dataTracker.set(DISPLAY_ROTATION_TRACKER, angle);
-    }
+    protected abstract void playBreakSound();
 
-    public float getDisplayRotation() {
-        return displayRotation;
-    }
+    protected abstract void playPutSound();
 
-    @Override
-    protected float turnHead(float bodyRotation, float headRotation) {
-        prevBodyYaw = prevYaw;
-        bodyYaw = getYaw();
-        return 0.0f;
-    }
+    protected abstract SoundEvent getHitSound();
 
-    @Override
-    public ActionResult interact(PlayerEntity player, Hand hand) {
-        ItemStack itemStack = player.getStackInHand(hand);
 
-        if (player.isSpectator()) {
-            return ActionResult.SUCCESS;
-        }
-
-        if (player.getWorld().isClient) {
-            return ActionResult.CONSUME;
-        }
-
-        if (tryDisplayItem(player, itemStack, hand)) {
-            return ActionResult.SUCCESS;
-        }
-
-        return ActionResult.PASS;
-    }
-
-    private boolean tryDisplayItem(PlayerEntity player, ItemStack stack, Hand hand) {
+    protected boolean tryDisplayItem(PlayerEntity player, ItemStack stack, Hand hand) {
         if (stack.isEmpty()) {
             if (displayedItem.isEmpty()) {
                 return false;
@@ -121,11 +76,66 @@ public class ItemDisplayEntity extends LivingEntity {
         return true;
     }
 
-    @Override
-    public boolean canEquip(ItemStack stack) {
-        return stack.isIn(ModTags.SHERD_SHAPED) || stack.isIn(ModTags.TEMPLATE_SHAPED) || stack.isIn(ModTags.DISC_SHAPED);
+    protected void breakAndDropItem(ServerWorld world, DamageSource damageSource) {
+        ItemStack itemStack = new ItemStack(this.getEntityItem());
+        Block.dropStack(getWorld(), getBlockPos(), itemStack);
+        onBreak(world, damageSource);
+    }
+    
+    protected void updateHealth(ServerWorld world, DamageSource damageSource, float amount) {
+        float f = getHealth() - amount;
+        if (f <= 0.5f) {
+            onBreak(world, damageSource);
+            kill();
+        } else {
+            setHealth(f);
+            emitGameEvent(GameEvent.ENTITY_DAMAGE, damageSource.getAttacker());
+        }
     }
 
+    protected void onBreak(ServerWorld world, DamageSource damageSource) {
+        playBreakSound();
+        drop(world, damageSource);
+
+        if (!displayedItem.isEmpty()) {
+            Block.dropStack(getWorld(), getBlockPos(), displayedItem);
+            displayedItem = ItemStack.EMPTY;
+        }
+    }
+
+
+    @Override
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(ENTITY_ROTATION_TRACKER, DEFAULT_ENTITY_ROTATION);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+
+        float angle = dataTracker.get(ENTITY_ROTATION_TRACKER);
+        if (entityRotation != angle) {
+            setEntityRotation(angle);
+        }
+    }
+
+    public void setEntityRotation(float angle) {
+        entityRotation = angle;
+        dataTracker.set(ENTITY_ROTATION_TRACKER, angle);
+    }
+
+    public float getEntityRotation() {
+        return entityRotation;
+    }
+
+    @Override
+    protected float turnHead(float bodyRotation, float headRotation) {
+        prevBodyYaw = prevYaw;
+        bodyYaw = getYaw();
+        return 0.0f;
+    }
+    
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
@@ -134,8 +144,8 @@ public class ItemDisplayEntity extends LivingEntity {
             nbt.put(DISPLAYED_ITEM_NBT_KEY, displayedItem.encodeAllowEmpty(this.getRegistryManager()));
         }
 
-        if (displayRotation != DEFAULT_DISPLAY_ROTATION) {
-            nbt.putFloat(DISPLAY_ROTATION_NBT_KEY, displayRotation);
+        if (entityRotation != DEFAULT_ENTITY_ROTATION) {
+            nbt.putFloat(ENTITY_ROTATION_NBT_KEY, entityRotation);
         }
     }
 
@@ -148,8 +158,8 @@ public class ItemDisplayEntity extends LivingEntity {
             displayedItem = ItemStack.fromNbtOrEmpty(this.getRegistryManager(), heldItemNbt);
         }
 
-        if (nbt.contains(DISPLAY_ROTATION_NBT_KEY)) {
-            setDisplayRotation(nbt.getFloat(DISPLAY_ROTATION_NBT_KEY));
+        if (nbt.contains(ENTITY_ROTATION_NBT_KEY)) {
+            setEntityRotation(nbt.getFloat(ENTITY_ROTATION_NBT_KEY));
         }
     }
 
@@ -296,7 +306,7 @@ public class ItemDisplayEntity extends LivingEntity {
     public void handleStatus(byte status) {
         if (status == EntityStatuses.HIT_ARMOR_STAND) {
             if (getWorld().isClient) {
-                getWorld().playSound(getX(), getY(), getZ(), SoundEvents.ENTITY_ARMOR_STAND_HIT, getSoundCategory(), 0.3f, 1.0f, false);
+                getWorld().playSound(getX(), getY(), getZ(), this.getHitSound(), getSoundCategory(), 0.3f, 1.0f, false);
                 lastHitTime = getWorld().getTime();
             }
         } else {
@@ -314,48 +324,6 @@ public class ItemDisplayEntity extends LivingEntity {
         return distance < (d *= 64.0) * d;
     }
 
-    private void spawnBreakParticles() {
-        if (getWorld() instanceof ServerWorld serverWorld) {
-            BlockStateParticleEffect particles = new BlockStateParticleEffect(ParticleTypes.BLOCK, Blocks.OAK_WOOD.getDefaultState());
-            serverWorld.spawnParticles(particles, getX(), getBodyY(0.6666666666666666), getZ(), 10, getWidth() / 4.0f, getHeight() / 4.0f, getWidth() / 4.0f, 0.05);
-        }
-    }
-
-    private void updateHealth(ServerWorld world, DamageSource damageSource, float amount) {
-        float f = getHealth() - amount;
-        if (f <= 0.5f) {
-            onBreak(world, damageSource);
-            kill();
-        } else {
-            setHealth(f);
-            emitGameEvent(GameEvent.ENTITY_DAMAGE, damageSource.getAttacker());
-        }
-    }
-
-    private void breakAndDropItem(ServerWorld world, DamageSource damageSource) {
-        ItemStack itemStack = new ItemStack(ModItems.ITEM_DISPLAY);
-        Block.dropStack(getWorld(), getBlockPos(), itemStack);
-        onBreak(world, damageSource);
-    }
-
-    private void onBreak(ServerWorld world, DamageSource damageSource) {
-        playBreakSound();
-        drop(world, damageSource);
-
-        if (!displayedItem.isEmpty()) {
-            Block.dropStack(getWorld(), getBlockPos(), displayedItem);
-            displayedItem = ItemStack.EMPTY;
-        }
-    }
-
-    private void playBreakSound() {
-        getWorld().playSound(null, getX(), getY(), getZ(), SoundEvents.ENTITY_ARMOR_STAND_BREAK, getSoundCategory(), 1.0f, 1.0f);
-    }
-
-    private void playPutSound() {
-        getWorld().playSound(null, getX(), getY(), getZ(), SoundEvents.BLOCK_CHISELED_BOOKSHELF_PLACE, getSoundCategory(), 1.0f, 1.0f);
-    }
-
     @Override
     public void kill() {
         remove(RemovalReason.KILLED);
@@ -365,23 +333,6 @@ public class ItemDisplayEntity extends LivingEntity {
     @Override
     public boolean handleAttack(Entity attacker) {
         return attacker instanceof PlayerEntity && !getWorld().canPlayerModifyAt((PlayerEntity)attacker, getBlockPos());
-    }
-
-    @Override
-    public FallSounds getFallSounds() {
-        return new FallSounds(SoundEvents.ENTITY_ARMOR_STAND_FALL, SoundEvents.ENTITY_ARMOR_STAND_FALL);
-    }
-
-    @Override
-    @Nullable
-    protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundEvents.ENTITY_ARMOR_STAND_HIT;
-    }
-
-    @Override
-    @Nullable
-    protected SoundEvent getDeathSound() {
-        return SoundEvents.ENTITY_ARMOR_STAND_BREAK;
     }
 
     @Override
@@ -400,6 +351,6 @@ public class ItemDisplayEntity extends LivingEntity {
 
     @Override
     public ItemStack getPickBlockStack() {
-        return new ItemStack(ModItems.ITEM_DISPLAY);
+        return new ItemStack(this.getEntityItem());
     }
 }

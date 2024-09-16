@@ -1,4 +1,4 @@
-package net.freedinner.items_displayed.entity.custom;
+package net.freedinner.items_displayed.entity.custom.item_display;
 
 import net.freedinner.items_displayed.ItemsDisplayed;
 import net.freedinner.items_displayed.ItemsDisplayedClient;
@@ -23,7 +23,7 @@ public class ItemDisplayEntityRenderer extends LivingEntityRenderer<ItemDisplayE
 
     @Override
     protected void setupTransforms(ItemDisplayEntity entity, MatrixStack matrices, float animationProgress, float bodyYaw, float tickDelta, float scale) {
-        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f - entity.getDisplayRotation()));
+        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f - entity.getEntityRotation()));
 
         float i = (float)(entity.getWorld().getTime() - entity.lastHitTime) + tickDelta;
         if (i < 5.0f) {

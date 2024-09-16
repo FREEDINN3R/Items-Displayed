@@ -1,26 +1,13 @@
-package net.freedinner.items_displayed.entity.custom;
+package net.freedinner.items_displayed.entity.custom.jewelry_pillow;
 
 import net.freedinner.items_displayed.ItemsDisplayed;
 import net.freedinner.items_displayed.ItemsDisplayedClient;
-import net.freedinner.items_displayed.item.ModTags;
-import net.freedinner.items_displayed.util.BlockItemMapper;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.feature.FeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.entity.model.EntityModelLoader;
-import net.minecraft.client.render.entity.model.ModelWithArms;
-import net.minecraft.client.render.entity.model.SheepWoolEntityModel;
-import net.minecraft.client.render.item.HeldItemRenderer;
-import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.passive.SheepEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Arm;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.RotationAxis;
 
 public class JewelryPillowColorRenderer extends FeatureRenderer<JewelryPillowEntity, JewelryPillowEntityModel> {
     private final JewelryPillowColorEntityModel model;

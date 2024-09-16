@@ -1,4 +1,4 @@
-package net.freedinner.items_displayed.entity.custom;
+package net.freedinner.items_displayed.entity.custom.jewelry_pillow;
 
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.ModelWithArms;

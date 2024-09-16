@@ -5,11 +5,14 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.freedinner.items_displayed.entity.ModEntities;
-import net.freedinner.items_displayed.entity.custom.*;
+import net.freedinner.items_displayed.entity.custom.item_display.ItemDisplayEntityModel;
+import net.freedinner.items_displayed.entity.custom.item_display.ItemDisplayEntityRenderer;
+import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowColorEntityModel;
+import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowEntityModel;
+import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowEntityRenderer;
 import net.freedinner.items_displayed.event.ModEventHandlers;
 import net.freedinner.items_displayed.networking.S2CLoadMapsPacket;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
-import net.minecraft.util.Identifier;
 
 public class ItemsDisplayedClient implements ClientModInitializer {
 	public static final EntityModelLayer ITEM_DISPLAY_MODEL_LAYER = new EntityModelLayer(

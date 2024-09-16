@@ -2,7 +2,7 @@ package net.freedinner.items_displayed.item.custom;
 
 import net.freedinner.items_displayed.config.ModConfigs;
 import net.freedinner.items_displayed.entity.ModEntities;
-import net.freedinner.items_displayed.entity.custom.JewelryPillowEntity;
+import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowEntity;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -97,7 +97,7 @@ public class JewelryPillowItem extends Item {
         float minRotation = ModConfigs.ENTITY_ROTATION_ANGLE;
         angle = MathHelper.floor((angle + minRotation / 2.0) / minRotation) * minRotation;
 
-        entity.setPillowRotation(angle);
+        entity.setEntityRotation(angle);
     }
 
     private void summonJewelryPillow(ServerWorld serverWorld, JewelryPillowEntity entity, PlayerEntity player) {

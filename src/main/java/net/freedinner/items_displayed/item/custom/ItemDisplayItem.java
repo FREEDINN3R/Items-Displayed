@@ -2,7 +2,7 @@ package net.freedinner.items_displayed.item.custom;
 
 import net.freedinner.items_displayed.config.ModConfigs;
 import net.freedinner.items_displayed.entity.ModEntities;
-import net.freedinner.items_displayed.entity.custom.ItemDisplayEntity;
+import net.freedinner.items_displayed.entity.custom.item_display.ItemDisplayEntity;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.entity.EntityType;
@@ -92,7 +92,7 @@ public class ItemDisplayItem extends Item {
         float minRotation = ModConfigs.ENTITY_ROTATION_ANGLE;
         angle = MathHelper.floor((angle + minRotation / 2.0) / minRotation) * minRotation;
 
-        entity.setDisplayRotation(angle);
+        entity.setEntityRotation(angle);
     }
 
     private void summonItemDisplay(ServerWorld serverWorld, ItemDisplayEntity entity, PlayerEntity player) {

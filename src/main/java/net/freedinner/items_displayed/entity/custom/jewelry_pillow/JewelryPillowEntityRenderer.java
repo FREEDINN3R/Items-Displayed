@@ -1,4 +1,4 @@
-package net.freedinner.items_displayed.entity.custom;
+package net.freedinner.items_displayed.entity.custom.jewelry_pillow;
 
 import net.freedinner.items_displayed.ItemsDisplayed;
 import net.freedinner.items_displayed.ItemsDisplayedClient;
@@ -24,7 +24,7 @@ public class JewelryPillowEntityRenderer extends LivingEntityRenderer<JewelryPil
 
     @Override
     protected void setupTransforms(JewelryPillowEntity entity, MatrixStack matrices, float animationProgress, float bodyYaw, float tickDelta, float scale) {
-        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f - entity.getPillowRotation()));
+        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f - entity.getEntityRotation()));
 
         float i = (float)(entity.getWorld().getTime() - entity.lastHitTime) + tickDelta;
         if (i < 5.0f) {

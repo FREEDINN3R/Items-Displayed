@@ -1,5 +1,6 @@
-package net.freedinner.items_displayed.entity.custom;
+package net.freedinner.items_displayed.entity.custom.item_display;
 
+import net.freedinner.items_displayed.item.ModTags;
 import net.freedinner.items_displayed.util.BlockItemMapper;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -15,16 +16,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Arm;
 import net.minecraft.util.math.RotationAxis;
 
-public class JewelryPillowItemRenderer extends FeatureRenderer<JewelryPillowEntity, JewelryPillowEntityModel> {
+public class ItemDisplayItemRenderer extends FeatureRenderer<ItemDisplayEntity, ItemDisplayEntityModel> {
     private final HeldItemRenderer heldItemRenderer;
-
-    public JewelryPillowItemRenderer(FeatureRendererContext<JewelryPillowEntity, JewelryPillowEntityModel> context, HeldItemRenderer heldItemRenderer) {
+    
+    public ItemDisplayItemRenderer(FeatureRendererContext<ItemDisplayEntity, ItemDisplayEntityModel> context, HeldItemRenderer heldItemRenderer) {
         super(context);
         this.heldItemRenderer = heldItemRenderer;
     }
 
     @Override
-    public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, JewelryPillowEntity entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
+    public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, ItemDisplayEntity entity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
         ItemStack itemStack = entity.getMainHandStack();
 
         if (itemStack.isEmpty()) {
@@ -38,10 +39,18 @@ public class JewelryPillowItemRenderer extends FeatureRenderer<JewelryPillowEnti
         matrices.push();
 
         ((ModelWithArms)getContextModel()).setArmAngle(Arm.RIGHT, matrices);
-        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-157.5f));
+        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-120.0f));
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0f));
 
-        matrices.translate(0f, -0.62f, -0.51f);
+        if (itemStack.isIn(ModTags.SHERD_SHAPED)) {
+            matrices.translate(0f, -0.11f, -0.94f);
+        }
+        else if (itemStack.isIn(ModTags.TEMPLATE_SHAPED)) {
+            matrices.translate(0f, -0.11f, -1.01f);
+        }
+        else if (itemStack.isIn(ModTags.DISC_SHAPED)) {
+            matrices.translate(0f, -0.11f, -1.01f);
+        }
 
         Block block = BlockItemMapper.getBlockOrNull(itemStack.getItem(), true);
         ItemStack blockItemStack = new ItemStack(block == null ? Blocks.AIR : block.asItem());
