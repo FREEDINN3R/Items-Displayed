@@ -7,7 +7,6 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.freedinner.items_displayed.entity.ModEntities;
 import net.freedinner.items_displayed.entity.custom.item_display.ItemDisplayEntityModel;
 import net.freedinner.items_displayed.entity.custom.item_display.ItemDisplayEntityRenderer;
-import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowColorEntityModel;
 import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowEntityModel;
 import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowEntityRenderer;
 import net.freedinner.items_displayed.event.ModEventHandlers;
@@ -24,18 +23,12 @@ public class ItemsDisplayedClient implements ClientModInitializer {
 			"main"
 	);
 
-	public static final EntityModelLayer JEWELRY_PILLOW_COLOR_MODEL_LAYER = new EntityModelLayer(
-			ItemsDisplayed.id("jewelry_pillow"),
-			"color"
-	);
-
 	@Override
 	public void onInitializeClient() {
 		EntityRendererRegistry.register(ModEntities.ITEM_DISPLAY, ItemDisplayEntityRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(ITEM_DISPLAY_MODEL_LAYER, ItemDisplayEntityModel::getTexturedModelData);
 		EntityRendererRegistry.register(ModEntities.JEWELRY_PILLOW, JewelryPillowEntityRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(JEWELRY_PILLOW_MODEL_LAYER, JewelryPillowEntityModel::getTexturedModelData);
-		EntityModelLayerRegistry.registerModelLayer(JEWELRY_PILLOW_COLOR_MODEL_LAYER, JewelryPillowColorEntityModel::getTexturedModelData);
 
 		ModEventHandlers.registerClientEventHandlers();
 		ClientPlayNetworking.registerGlobalReceiver(S2CLoadMapsPacket.ID, S2CLoadMapsPacket::receive);

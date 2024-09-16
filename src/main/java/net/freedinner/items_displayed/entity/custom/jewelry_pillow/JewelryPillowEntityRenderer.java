@@ -14,12 +14,12 @@ public class JewelryPillowEntityRenderer extends LivingEntityRenderer<JewelryPil
     public JewelryPillowEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new JewelryPillowEntityModel(context.getPart(ItemsDisplayedClient.JEWELRY_PILLOW_MODEL_LAYER)), 0.0f);
         addFeature(new JewelryPillowItemRenderer(this, context.getHeldItemRenderer()));
-        addFeature(new JewelryPillowColorRenderer(this, context.getModelLoader()));
     }
 
     @Override
     public Identifier getTexture(JewelryPillowEntity entity) {
-        return ItemsDisplayed.id( "textures/entity/jewelry_pillow/jewelry_pillow_base.png");
+        String color = entity.getColor().getName();
+        return ItemsDisplayed.id( "textures/entity/jewelry_pillow/" + color + "_jewelry_pillow.png");
     }
 
     @Override
