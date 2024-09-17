@@ -42,12 +42,12 @@ public class JewelryPillowItem extends Item {
         }
 
         if (Screen.hasShiftDown()) {
-            for (int i = 0; i < 3; i++) {
-                tooltip.add(Text.literal("helper tooltip no. " + i).formatted(Formatting.GRAY));
-            }
+            tooltip.add(Text.translatable("item.items_displayed.tooltip.can_be_used_to").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("item.items_displayed.tooltip.jewelry_pillow_0").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("item.items_displayed.tooltip.jewelry_pillow_1").formatted(Formatting.GRAY));
         }
         else {
-            tooltip.add(Text.literal("hidden helper tooltip").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("item.items_displayed.tooltip.shift_more_info").formatted(Formatting.GRAY));
         }
     }
 

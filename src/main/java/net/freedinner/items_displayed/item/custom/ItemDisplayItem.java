@@ -38,9 +38,10 @@ public class ItemDisplayItem extends Item {
         }
 
         if (Screen.hasShiftDown()) {
-            for (int i = 0; i < 3; i++) {
-                tooltip.add(Text.translatable("item.items_displayed.tooltip.item_display_" + i).formatted(Formatting.GRAY));
-            }
+            tooltip.add(Text.translatable("item.items_displayed.tooltip.can_be_used_to").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("item.items_displayed.tooltip.item_display_0").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("item.items_displayed.tooltip.item_display_1").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("item.items_displayed.tooltip.item_display_2").formatted(Formatting.GRAY));
         }
         else {
             tooltip.add(Text.translatable("item.items_displayed.tooltip.shift_more_info").formatted(Formatting.GRAY));
