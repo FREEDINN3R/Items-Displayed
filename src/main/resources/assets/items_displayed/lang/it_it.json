@@ -33,5 +33,6 @@
   "tag.item.items_displayed.sherds" : "Frammenti",
   "tag.item.items_displayed.smithing_templates" : "Modelli da forgia",
 
-  "entity.items_displayed.item_display": "Visualizzazione dell'Oggetto"
+  "entity.items_displayed.item_display": "Visualizzazione dell'Oggetto",
+  "entity.items_displayed.jewelry_pillow": "Cuscino di Gioielli"
 }

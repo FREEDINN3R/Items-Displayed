@@ -33,5 +33,6 @@
   "tag.item.items_displayed.sherds" : "Sherds",
   "tag.item.items_displayed.smithing_templates" : "Smithing templates",
 
-  "entity.items_displayed.item_display": "Item Display"
+  "entity.items_displayed.item_display": "Item Display",
+  "entity.items_displayed.jewelry_pillow": "Jewelry Pillow"
 }

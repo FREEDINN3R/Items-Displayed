@@ -33,5 +33,6 @@
   "tag.item.items_displayed.sherds" : "조각",
   "tag.item.items_displayed.smithing_templates" : "대장장이 템플릿",
 
-  "entity.items_displayed.item_display": "아이템 표시"
+  "entity.items_displayed.item_display": "아이템 표시",
+  "entity.items_displayed.jewelry_pillow": "아이템 디스플레이"
 }

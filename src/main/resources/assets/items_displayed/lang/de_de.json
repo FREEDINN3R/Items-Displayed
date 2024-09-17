@@ -33,5 +33,6 @@
   "tag.item.items_displayed.sherds" : "Töpferscherben",
   "tag.item.items_displayed.smithing_templates" : "Schmiedevorlagen",
 
-  "entity.items_displayed.item_display": "Gegenstandsdarsteller"
+  "entity.items_displayed.item_display": "Gegenstandsdarsteller",
+  "entity.items_displayed.jewelry_pillow": "Schmuckkissen"
 }

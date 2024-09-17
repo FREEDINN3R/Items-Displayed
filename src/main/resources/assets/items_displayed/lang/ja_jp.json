@@ -33,5 +33,6 @@
   "tag.item.items_displayed.sherds" : "壺の欠片",
   "tag.item.items_displayed.smithing_templates" : "鍛冶型",
 
-  "entity.items_displayed.item_display": "展示台"
+  "entity.items_displayed.item_display": "展示台",
+  "entity.items_displayed.jewelry_pillow": "アイテムディスプレイ"
 }

@@ -33,5 +33,6 @@
   "tag.item.items_displayed.sherds" : "Fragmentos",
   "tag.item.items_displayed.smithing_templates" : "Modelos de forjamento",
 
-  "entity.items_displayed.item_display": "Exibição de Item"
+  "entity.items_displayed.item_display": "Exibição de Item",
+  "entity.items_displayed.jewelry_pillow": "Almofada de Joias"
 }

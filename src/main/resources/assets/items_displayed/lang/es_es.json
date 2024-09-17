@@ -35,5 +35,6 @@
   "tag.item.items_displayed.sherds" : "Fragmentos",
   "tag.item.items_displayed.smithing_templates" : "Plantillas de forja",
 
-  "entity.items_displayed.item_display": "Mostrar Objeto"
+  "entity.items_displayed.item_display": "Mostrar Objeto",
+  "entity.items_displayed.jewelry_pillow": "Cojín de Joyería"
 }

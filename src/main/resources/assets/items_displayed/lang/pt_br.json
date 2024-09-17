@@ -33,5 +33,6 @@
   "tag.item.items_displayed.sherds" : "Óstracos",
   "tag.item.items_displayed.smithing_templates" : "Moldes de ferraria",
 
-  "entity.items_displayed.item_display": "Mostrador de itens"
+  "entity.items_displayed.item_display": "Mostrador de itens",
+  "entity.items_displayed.jewelry_pillow": "Almofada de Joias"
 }

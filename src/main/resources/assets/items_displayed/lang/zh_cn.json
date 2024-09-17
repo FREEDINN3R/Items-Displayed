@@ -33,5 +33,6 @@
   "tag.item.items_displayed.sherds" : "碎片",
   "tag.item.items_displayed.smithing_templates" : "锻造模板",
 
-  "entity.items_displayed.item_display": "物品展示"
+  "entity.items_displayed.item_display": "物品展示",
+  "entity.items_displayed.jewelry_pillow": "物品展示"
 }

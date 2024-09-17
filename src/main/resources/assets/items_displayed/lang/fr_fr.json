@@ -34,5 +34,6 @@
   "tag.item.items_displayed.sherds" : "Éclats",
   "tag.item.items_displayed.smithing_templates" : "Modèles de forge",
 
-  "entity.items_displayed.item_display": "Affichage d'Objet"
+  "entity.items_displayed.item_display": "Affichage d'Objet",
+  "entity.items_displayed.jewelry_pillow": "Coussin de Bijoux"
 }
