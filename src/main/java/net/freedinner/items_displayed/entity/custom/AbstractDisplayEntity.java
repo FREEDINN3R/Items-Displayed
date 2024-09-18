@@ -76,16 +76,16 @@ public abstract class AbstractDisplayEntity extends LivingEntity {
         return true;
     }
 
-    protected void breakAndDropItem(ServerWorld world, DamageSource damageSource) {
+    protected void breakAndDropItem(DamageSource damageSource) {
         ItemStack itemStack = new ItemStack(this.getEntityItem());
         Block.dropStack(getWorld(), getBlockPos(), itemStack);
-        onBreak(world, damageSource);
+        onBreak(damageSource);
     }
     
-    protected void updateHealth(ServerWorld world, DamageSource damageSource, float amount) {
+    protected void updateHealth(DamageSource damageSource, float amount) {
         float f = getHealth() - amount;
         if (f <= 0.5f) {
-            onBreak(world, damageSource);
+            onBreak(damageSource);
             kill();
         } else {
             setHealth(f);
@@ -93,9 +93,9 @@ public abstract class AbstractDisplayEntity extends LivingEntity {
         }
     }
 
-    protected void onBreak(ServerWorld world, DamageSource damageSource) {
+    protected void onBreak(DamageSource damageSource) {
         playBreakSound();
-        drop(world, damageSource);
+        drop(damageSource);
 
         if (!displayedItem.isEmpty()) {
             Block.dropStack(getWorld(), getBlockPos(), displayedItem);
@@ -234,8 +234,6 @@ public abstract class AbstractDisplayEntity extends LivingEntity {
             return false;
         }
 
-        ServerWorld serverWorld = (ServerWorld) this.getWorld();
-
         if (source.isIn(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
             kill();
             return false;
@@ -246,14 +244,14 @@ public abstract class AbstractDisplayEntity extends LivingEntity {
         }
 
         if (source.isIn(DamageTypeTags.IS_EXPLOSION)) {
-            breakAndDropItem(serverWorld, source);
+            breakAndDropItem(source);
             kill();
             return false;
         }
 
         if (source.isIn(DamageTypeTags.IGNITES_ARMOR_STANDS)) {
             if (this.isOnFire()) {
-                updateHealth(serverWorld, source, 0.15f);
+                updateHealth(source, 0.15f);
             } else {
                 setOnFireFor(5);
             }
@@ -262,7 +260,7 @@ public abstract class AbstractDisplayEntity extends LivingEntity {
         }
 
         if (source.isIn(DamageTypeTags.BURNS_ARMOR_STANDS) && getHealth() > 0.5f) {
-            updateHealth(serverWorld, source, 4.0f);
+            updateHealth(source, 4.0f);
             return false;
         }
 
@@ -290,7 +288,7 @@ public abstract class AbstractDisplayEntity extends LivingEntity {
 
         long currTime = getWorld().getTime();
         if (currTime - lastHitTime <= 5L || isProjectile) {
-            breakAndDropItem(serverWorld, source);
+            breakAndDropItem(source);
             spawnBreakParticles();
             kill();
         } else {

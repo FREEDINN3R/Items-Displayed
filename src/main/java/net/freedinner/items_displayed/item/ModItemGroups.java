@@ -65,9 +65,7 @@ public class ModItemGroups {
                             entries.add(Items.BURN_POTTERY_SHERD);
                             entries.add(Items.DANGER_POTTERY_SHERD);
                             entries.add(Items.EXPLORER_POTTERY_SHERD);
-                            entries.add(Items.FLOW_POTTERY_SHERD);
                             entries.add(Items.FRIEND_POTTERY_SHERD);
-                            entries.add(Items.GUSTER_POTTERY_SHERD);
                             entries.add(Items.HEART_POTTERY_SHERD);
                             entries.add(Items.HEARTBREAK_POTTERY_SHERD);
                             entries.add(Items.HOWL_POTTERY_SHERD);
@@ -75,7 +73,6 @@ public class ModItemGroups {
                             entries.add(Items.MOURNER_POTTERY_SHERD);
                             entries.add(Items.PLENTY_POTTERY_SHERD);
                             entries.add(Items.PRIZE_POTTERY_SHERD);
-                            entries.add(Items.SCRAPE_POTTERY_SHERD);
                             entries.add(Items.SHEAF_POTTERY_SHERD);
                             entries.add(Items.SHELTER_POTTERY_SHERD);
                             entries.add(Items.SKULL_POTTERY_SHERD);
@@ -99,8 +96,6 @@ public class ModItemGroups {
                             entries.add(Items.RIB_ARMOR_TRIM_SMITHING_TEMPLATE);
                             entries.add(Items.EYE_ARMOR_TRIM_SMITHING_TEMPLATE);
                             entries.add(Items.SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE);
-                            entries.add(Items.FLOW_ARMOR_TRIM_SMITHING_TEMPLATE);
-                            entries.add(Items.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE);
 
                             // Discs
                             entries.add(Items.MUSIC_DISC_13);
@@ -114,10 +109,7 @@ public class ModItemGroups {
                             entries.add(Items.MUSIC_DISC_STRAD);
                             entries.add(Items.MUSIC_DISC_WARD);
                             entries.add(Items.MUSIC_DISC_11);
-                            entries.add(Items.MUSIC_DISC_CREATOR_MUSIC_BOX);
                             entries.add(Items.MUSIC_DISC_WAIT);
-                            entries.add(Items.MUSIC_DISC_CREATOR);
-                            entries.add(Items.MUSIC_DISC_PRECIPICE);
                             entries.add(Items.MUSIC_DISC_OTHERSIDE);
                             entries.add(Items.MUSIC_DISC_RELIC);
                             entries.add(Items.MUSIC_DISC_5);

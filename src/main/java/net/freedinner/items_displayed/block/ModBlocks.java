@@ -29,11 +29,7 @@ public class ModBlocks {
             ModTemplates.defaultSherdBlock());
     public static final Block EXPLORER_POTTERY_SHERD = registerBlock("explorer_pottery_sherd",
             ModTemplates.defaultSherdBlock());
-    public static final Block FLOW_POTTERY_SHERD = registerBlock("flow_pottery_sherd",
-            ModTemplates.defaultSherdBlock());
     public static final Block FRIEND_POTTERY_SHERD = registerBlock("friend_pottery_sherd",
-            ModTemplates.defaultSherdBlock());
-    public static final Block GUSTER_POTTERY_SHERD = registerBlock("guster_pottery_sherd",
             ModTemplates.defaultSherdBlock());
     public static final Block HEART_POTTERY_SHERD = registerBlock("heart_pottery_sherd",
             ModTemplates.defaultSherdBlock());
@@ -49,8 +45,6 @@ public class ModBlocks {
             ModTemplates.defaultSherdBlock());
     public static final Block PRIZE_POTTERY_SHERD = registerBlock("prize_pottery_sherd",
             ModTemplates.defaultSherdBlock());
-    public static final Block SCRAPE_POTTERY_SHERD = registerBlock("scrape_pottery_sherd",
-            ModTemplates.defaultSherdBlock());
     public static final Block SHEAF_POTTERY_SHERD = registerBlock("sheaf_pottery_sherd",
             ModTemplates.defaultSherdBlock());
     public static final Block SHELTER_POTTERY_SHERD = registerBlock("shelter_pottery_sherd",
@@ -62,16 +56,12 @@ public class ModBlocks {
 
     public static final Block NETHERITE_UPGRADE = registerBlock("netherite_upgrade",
             ModTemplates.defaultUpgradeBlock());
-    public static final Block BOLT_ARMOR_TRIM = registerBlock("bolt_armor_trim",
-            ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.COPPER));
     public static final Block COAST_ARMOR_TRIM = registerBlock("coast_armor_trim",
             ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.STONE));
     public static final Block DUNE_ARMOR_TRIM = registerBlock("dune_armor_trim",
             ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.DRIPSTONE_BLOCK));
     public static final Block EYE_ARMOR_TRIM = registerBlock("eye_armor_trim",
             ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.CALCITE));
-    public static final Block FLOW_ARMOR_TRIM = registerBlock("flow_armor_trim",
-            ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.DEEPSLATE_TILES));
     public static final Block HOST_ARMOR_TRIM = registerBlock("host_armor_trim",
             ModTemplates.defaultArmorTrimBlock(BlockSoundGroup.GRAVEL));
     public static final Block RAISER_ARMOR_TRIM = registerBlock("raiser_armor_trim",
@@ -159,12 +149,6 @@ public class ModBlocks {
             ModTemplates.defaultDiscBlock(BlockSoundGroup.BAMBOO_WOOD));
     public static final Block MUSIC_DISC_RELIC = registerBlock("music_disc_relic",
             ModTemplates.defaultDiscBlock(BlockSoundGroup.DECORATED_POT));
-    public static final Block MUSIC_DISC_CREATOR = registerBlock("music_disc_creator",
-            ModTemplates.defaultDiscBlock(BlockSoundGroup.COPPER));
-    public static final Block MUSIC_DISC_CREATOR_MUSIC_BOX = registerBlock("music_disc_creator_music_box",
-            ModTemplates.defaultDiscBlock(BlockSoundGroup.COPPER));
-    public static final Block MUSIC_DISC_PRECIPICE = registerBlock("music_disc_precipice",
-            ModTemplates.defaultDiscBlock(BlockSoundGroup.STONE));
     public static final Block DISC_FRAGMENT_5 = registerBlock("disc_fragment_5",
             ModTemplates.defaultDiscFragmentBlock());
 
