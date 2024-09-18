@@ -10,7 +10,8 @@ import net.freedinner.items_displayed.entity.custom.item_display.ItemDisplayEnti
 import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowEntityModel;
 import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowEntityRenderer;
 import net.freedinner.items_displayed.event.ModEventHandlers;
-import net.freedinner.items_displayed.networking.S2CLoadMapsPacket;
+import net.freedinner.items_displayed.networking.NetworkingConstants;
+import net.freedinner.items_displayed.util.BlockItemMapper;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 
 public class ItemsDisplayedClient implements ClientModInitializer {
@@ -31,6 +32,9 @@ public class ItemsDisplayedClient implements ClientModInitializer {
 		EntityModelLayerRegistry.registerModelLayer(JEWELRY_PILLOW_MODEL_LAYER, JewelryPillowEntityModel::getTexturedModelData);
 
 		ModEventHandlers.registerClientEventHandlers();
-		ClientPlayNetworking.registerGlobalReceiver(S2CLoadMapsPacket.ID, S2CLoadMapsPacket::receive);
+
+		ClientPlayNetworking.registerGlobalReceiver(NetworkingConstants.CLIENT_LOAD_MAPS_ID, (client, handler, buf, responseSender) -> {
+			BlockItemMapper.loadDataFromPacket(buf);
+		});
 	}
 }

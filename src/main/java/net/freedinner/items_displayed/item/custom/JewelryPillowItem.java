@@ -4,13 +4,13 @@ import net.freedinner.items_displayed.config.ModConfigs;
 import net.freedinner.items_displayed.entity.ModEntities;
 import net.freedinner.items_displayed.entity.custom.jewelry_pillow.JewelryPillowEntity;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.client.item.TooltipType;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -21,6 +21,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -34,8 +35,8 @@ public class JewelryPillowItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        super.appendTooltip(stack, context, tooltip, type);
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        super.appendTooltip(stack, world, tooltip, context);
 
         if (!ModConfigs.APPEND_EXTRA_TOOLTIPS) {
             return;
@@ -89,7 +90,7 @@ public class JewelryPillowItem extends Item {
 
     private JewelryPillowEntity createJewelryPillow(ServerWorld serverWorld, ItemUsageContext context, BlockPos blockPos) {
         Consumer<JewelryPillowEntity> consumer = EntityType.copier(serverWorld, context.getStack(), context.getPlayer());
-        return ModEntities.JEWELRY_PILLOW.create(serverWorld, consumer, blockPos, SpawnReason.SPAWN_EGG, true, false);
+        return ModEntities.JEWELRY_PILLOW.create(serverWorld, null, consumer, blockPos, SpawnReason.SPAWN_EGG, true, false);
     }
 
     private void setJewelryPillowRotation(JewelryPillowEntity entity, ItemUsageContext context) {

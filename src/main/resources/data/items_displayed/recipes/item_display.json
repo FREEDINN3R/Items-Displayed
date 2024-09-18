@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "minecraft:misc",
   "pattern": [
     " / ",
     "/ /"
@@ -11,7 +11,6 @@
     }
   },
   "result": {
-    "count": 1,
-    "id": "items_displayed:item_display"
+    "item": "items_displayed:item_display"
   }
 }

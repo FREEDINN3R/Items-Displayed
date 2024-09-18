@@ -1,6 +1,5 @@
 package net.freedinner.items_displayed.entity.custom;
 
-import net.freedinner.items_displayed.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
@@ -105,9 +104,9 @@ public abstract class AbstractDisplayEntity extends LivingEntity {
 
 
     @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-        super.initDataTracker(builder);
-        builder.add(ENTITY_ROTATION_TRACKER, DEFAULT_ENTITY_ROTATION);
+    protected void initDataTracker() {
+        super.initDataTracker();
+        dataTracker.startTracking(ENTITY_ROTATION_TRACKER, DEFAULT_ENTITY_ROTATION);
     }
 
     @Override
@@ -141,7 +140,10 @@ public abstract class AbstractDisplayEntity extends LivingEntity {
         super.writeCustomDataToNbt(nbt);
 
         if (!displayedItem.isEmpty()) {
-            nbt.put(DISPLAYED_ITEM_NBT_KEY, displayedItem.encodeAllowEmpty(this.getRegistryManager()));
+            NbtCompound heldItemNbt = new NbtCompound();
+
+            displayedItem.writeNbt(heldItemNbt);
+            nbt.put(DISPLAYED_ITEM_NBT_KEY, heldItemNbt);
         }
 
         if (entityRotation != DEFAULT_ENTITY_ROTATION) {
@@ -155,7 +157,7 @@ public abstract class AbstractDisplayEntity extends LivingEntity {
 
         if (nbt.contains(DISPLAYED_ITEM_NBT_KEY)) {
             NbtCompound heldItemNbt = nbt.getCompound(DISPLAYED_ITEM_NBT_KEY);
-            displayedItem = ItemStack.fromNbtOrEmpty(this.getRegistryManager(), heldItemNbt);
+            displayedItem = ItemStack.fromNbt(heldItemNbt);
         }
 
         if (nbt.contains(ENTITY_ROTATION_NBT_KEY)) {
