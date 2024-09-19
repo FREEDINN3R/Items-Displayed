@@ -12,15 +12,8 @@ public class ArmorTrimBlock extends AbstractItemBlock implements Waterloggable {
     private static final VoxelShape EAST_WEST_SHAPE =
             Block.createCuboidShape(2, 0, 4, 14, 4, 12);
 
-    private static final MapCodec<? extends HorizontalFacingBlock> CODEC = AbstractItemBlock.createCodec(ArmorTrimBlock::new);
-
     public ArmorTrimBlock(Settings settings) {
         super(settings);
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
-        return CODEC;
     }
 
     @Override

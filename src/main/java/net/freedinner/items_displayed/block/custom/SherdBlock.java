@@ -10,15 +10,8 @@ public class SherdBlock extends AbstractItemBlock implements Waterloggable {
     public static final VoxelShape SHAPE =
             Block.createCuboidShape(1, 0, 1, 15, 2, 15);
 
-    private static final MapCodec<? extends HorizontalFacingBlock> CODEC = AbstractItemBlock.createCodec(SherdBlock::new);
-
     public SherdBlock(Settings settings) {
         super(settings);
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
-        return CODEC;
     }
 
     @Override

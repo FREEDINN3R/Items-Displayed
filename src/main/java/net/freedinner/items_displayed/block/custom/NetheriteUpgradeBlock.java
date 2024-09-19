@@ -12,16 +12,9 @@ public class NetheriteUpgradeBlock extends AbstractItemBlock implements Waterlog
     private static final VoxelShape EAST_WEST_SHAPE =
             Block.createCuboidShape(2, 0, 3.5, 14, 4, 12.5);
 
-    private static final MapCodec<? extends HorizontalFacingBlock> CODEC = AbstractItemBlock.createCodec(NetheriteUpgradeBlock::new);
-
 
     public NetheriteUpgradeBlock(Settings settings) {
         super(settings);
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
-        return CODEC;
     }
 
     @Override

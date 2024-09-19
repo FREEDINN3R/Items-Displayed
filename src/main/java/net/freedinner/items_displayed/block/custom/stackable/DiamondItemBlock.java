@@ -25,15 +25,8 @@ public class DiamondItemBlock extends AbstractStackableItemBlock {
     public static final VoxelShape SHAPE_4 =
             Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
 
-    private static final MapCodec<? extends HorizontalFacingBlock> CODEC = AbstractItemBlock.createCodec(DiamondItemBlock::new);
-
     public DiamondItemBlock(Settings settings) {
         super(settings);
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
-        return CODEC;
     }
 
     @Override

@@ -25,15 +25,8 @@ public class EmeraldItemBlock extends AbstractStackableItemBlock {
     public static final VoxelShape SHAPE_4 =
             Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 4.0, 15.0);
 
-    private static final MapCodec<? extends HorizontalFacingBlock> CODEC = AbstractItemBlock.createCodec(EmeraldItemBlock::new);
-
     public EmeraldItemBlock(Settings settings) {
         super(settings);
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
-        return CODEC;
     }
 
     @Override

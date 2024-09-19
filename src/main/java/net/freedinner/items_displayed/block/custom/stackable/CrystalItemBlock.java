@@ -30,15 +30,8 @@ public class CrystalItemBlock extends AbstractStackableItemBlock {
     public static final VoxelShape EAST_WEST_SHAPE_4 =
             Block.createCuboidShape(1.5, 0.0, 3.0, 14.5, 6.0, 13.0);
 
-    private static final MapCodec<? extends HorizontalFacingBlock> CODEC = AbstractItemBlock.createCodec(CrystalItemBlock::new);
-
     public CrystalItemBlock(Settings settings) {
         super(settings);
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
-        return CODEC;
     }
 
     @Override
