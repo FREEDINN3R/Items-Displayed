@@ -1,16 +1,19 @@
 package net.freedinner.items_displayed.entity.custom.jewelry_pillow;
 
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.ModelWithArms;
-import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Arm;
 
-public class JewelryPillowEntityModel extends SinglePartEntityModel<JewelryPillowEntity> implements ModelWithArms {
+import java.util.Optional;
+
+public class JewelryPillowEntityModel extends EntityModel<JewelryPillowEntityRenderState> implements ModelWithArms {
 	private final ModelPart root;
 
 	public JewelryPillowEntityModel(ModelPart root) {
-		this.root = root;
+        super(root);
+        this.root = root;
 	}
 
 	public static TexturedModelData getTexturedModelData() {
@@ -28,12 +31,12 @@ public class JewelryPillowEntityModel extends SinglePartEntityModel<JewelryPillo
 	}
 
 	@Override
-	public ModelPart getPart() {
-		return root;
+	public Optional<ModelPart> getPart(String name) {
+		return Optional.of(root);
 	}
 
 	@Override
-	public void setAngles(JewelryPillowEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+	public void setAngles(JewelryPillowEntityRenderState state) {
 	}
 
 	@Override

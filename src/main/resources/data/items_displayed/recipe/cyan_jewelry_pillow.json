@@ -6,15 +6,9 @@
     "/w/"
   ],
   "key": {
-    "*": {
-      "item": "minecraft:gold_nugget"
-    },
-    "/": {
-      "item": "minecraft:stick"
-    },
-    "w": {
-      "item": "minecraft:cyan_wool"
-    }
+    "*": "minecraft:gold_nugget",
+    "/": "minecraft:stick",
+    "w": "minecraft:cyan_wool"
   },
   "result": {
     "count": 1,

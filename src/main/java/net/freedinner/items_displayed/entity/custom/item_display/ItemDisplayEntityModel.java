@@ -1,16 +1,19 @@
 package net.freedinner.items_displayed.entity.custom.item_display;
 
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.ModelWithArms;
-import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Arm;
 
-public class ItemDisplayEntityModel extends SinglePartEntityModel<ItemDisplayEntity> implements ModelWithArms {
+import java.util.Optional;
+
+public class ItemDisplayEntityModel extends EntityModel<ItemDisplayEntityRenderState> implements ModelWithArms {
 	private final ModelPart root;
 
 	public ItemDisplayEntityModel(ModelPart root) {
-		this.root = root;
+        super(root);
+        this.root = root;
 	}
 
 	public static TexturedModelData getTexturedModelData() {
@@ -27,12 +30,12 @@ public class ItemDisplayEntityModel extends SinglePartEntityModel<ItemDisplayEnt
 	}
 
 	@Override
-	public ModelPart getPart() {
-		return root;
+	public Optional<ModelPart> getPart(String name) {
+		return Optional.of(root);
 	}
 
 	@Override
-	public void setAngles(ItemDisplayEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+	public void setAngles(ItemDisplayEntityRenderState state){
 	}
 
 	@Override
