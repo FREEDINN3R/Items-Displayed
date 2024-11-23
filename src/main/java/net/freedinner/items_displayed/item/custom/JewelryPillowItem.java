@@ -77,7 +77,7 @@ public class JewelryPillowItem extends Item {
         }
 
         context.getStack().decrement(1);
-        return ActionResult.success(world.isClient);
+        return ActionResult.SUCCESS;
     }
 
     private boolean enoughSpaceAt(BlockPos blockPos, World world) {
@@ -89,7 +89,7 @@ public class JewelryPillowItem extends Item {
 
     private JewelryPillowEntity createJewelryPillow(ServerWorld serverWorld, ItemUsageContext context, BlockPos blockPos) {
         Consumer<JewelryPillowEntity> consumer = EntityType.copier(serverWorld, context.getStack(), context.getPlayer());
-        return ModEntities.JEWELRY_PILLOW.create(serverWorld, consumer, blockPos, SpawnReason.SPAWN_EGG, true, false);
+        return ModEntities.JEWELRY_PILLOW.create(serverWorld, consumer, blockPos, SpawnReason.SPAWN_ITEM_USE, true, false);
     }
 
     private void setJewelryPillowRotation(JewelryPillowEntity entity, ItemUsageContext context) {

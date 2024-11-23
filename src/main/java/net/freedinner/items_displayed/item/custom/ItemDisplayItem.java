@@ -73,7 +73,8 @@ public class ItemDisplayItem extends Item {
         }
 
         context.getStack().decrement(1);
-        return ActionResult.success(world.isClient);
+
+        return ActionResult.SUCCESS;
     }
 
     private boolean enoughSpaceAt(BlockPos blockPos, World world) {
@@ -85,7 +86,7 @@ public class ItemDisplayItem extends Item {
 
     private ItemDisplayEntity createItemDisplay(ServerWorld serverWorld, ItemUsageContext context, BlockPos blockPos) {
         Consumer<ItemDisplayEntity> consumer = EntityType.copier(serverWorld, context.getStack(), context.getPlayer());
-        return ModEntities.ITEM_DISPLAY.create(serverWorld, consumer, blockPos, SpawnReason.SPAWN_EGG, true, false);
+        return ModEntities.ITEM_DISPLAY.create(serverWorld, consumer, blockPos, SpawnReason.SPAWN_ITEM_USE, true, false);
     }
 
     private void setItemDisplayRotation(ItemDisplayEntity entity, ItemUsageContext context) {

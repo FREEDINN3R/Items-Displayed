@@ -6,9 +6,7 @@
     "/ /"
   ],
   "key": {
-    "/": {
-      "item": "minecraft:stick"
-    }
+    "/": "minecraft:stick"
   },
   "result": {
     "count": 1,
