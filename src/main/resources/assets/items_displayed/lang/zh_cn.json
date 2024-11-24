@@ -23,14 +23,14 @@
   "item.items_displayed.tooltip.shift_place": "潜行时可放置",
   "item.items_displayed.tooltip.shift_more_info": "按住 Shift 键查看更多信息",
   "item.items_displayed.tooltip.can_be_used_to": "可用于展示：",
-  "item.items_displayed.tooltip.item_display_0": " - 陶片",
+  "item.items_displayed.tooltip.item_display_0": " - 纹样陶片",
   "item.items_displayed.tooltip.item_display_1": " - 锻造模板",
   "item.items_displayed.tooltip.item_display_2": " - 唱片",
   "item.items_displayed.tooltip.jewelry_pillow_0": " - 宝石",
   "item.items_displayed.tooltip.jewelry_pillow_1": " - 水晶",
   "item.items_displayed.tooltip.debug": "你不应该拥有这个物品...",
 
-  "tag.item.items_displayed.sherds" : "陶片",
+  "tag.item.items_displayed.sherds" : "纹样陶片",
   "tag.item.items_displayed.smithing_templates" : "锻造模板",
 
   "entity.items_displayed.item_display": "物品展示架",
